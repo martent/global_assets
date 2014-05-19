@@ -1,14 +1,14 @@
-.mf-v3 {
+.mf-v4 {
   h2.group-title {
     font-size: 14px;
     border-bottom: $border;
-    margin: 1em 0 1em;
+    margin: 1em 0;
     padding-bottom: .2em;
   }
   .form-group.warning, .field_with_errors {
     padding: 0;
     background: transparent;
-    border: none;
+    border: 0;
     font-size: 13px;
     label, .checkbox {
       color: #000;
