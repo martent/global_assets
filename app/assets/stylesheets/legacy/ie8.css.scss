@@ -1,0 +1,22 @@
+#malmo-masthead {
+}
+
+.breadcrumbs li {
+  display: block;
+  float: left;
+  margin-right: 1.5em;
+}
+
+.table-wrapper {
+  overflow: hidden;
+  width: auto;
+}
+
+form.basic .control-label {
+  width: 160px;
+}
+form.basic .controls {
+  display: inline-block;
+  padding-left: 20px;
+  margin-left: 0;
+}

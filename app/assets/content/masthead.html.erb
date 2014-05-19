@@ -1,0 +1,60 @@
+<header id="malmo-masthead" role="banner" class="mf-v3">
+  <div class="nav-logo">
+    <a href="<%= APP_CONFIG['sv_base_url']%>"></a>
+  </div>
+
+  <div class="dropdown" id="main-nav">
+    <button type="button" data-toggle="dropdown" class="m-icon-menu-0">
+      <span class="text">Meny</span>
+    </button>
+    <ul class="dropdown-menu" role="menu" aria-hidden="true" aria-labelledby="nav-trigger">
+      <li>
+        <a role="menuitem" href="<%= APP_CONFIG['sv_base_url']%>Medborgare/Biblioteken.html">Biblioteken</a>
+      </li>
+      <li>
+        <a role="menuitem" href="<%= APP_CONFIG['sv_base_url']%>Medborgare/Bo--bygga.html">Bo &amp; bygga</a>
+      </li>
+      <li>
+        <a role="menuitem" href="<%= APP_CONFIG['sv_base_url']%>Medborgare/Forskola--utbildning.html">Förskola &amp; utbildning</a>
+      </li>
+      <li>
+        <a role="menuitem" href="<%= APP_CONFIG['sv_base_url']%>Medborgare/Idrott--fritid.html">Idrott &amp; fritid</a>
+      </li>
+      <li>
+        <a role="menuitem" href="<%= APP_CONFIG['sv_base_url']%>Medborgare/Jobb--praktik.html">Jobb &amp; praktik</a>
+      </li>
+      <li>
+        <a role="menuitem" href="<%= APP_CONFIG['sv_base_url']%>Kommun--politik.html">Kommun &amp; politik</a>
+      </li>
+      <li>
+        <a role="menuitem" href="<%= APP_CONFIG['sv_base_url']%>Medborgare/Kultur--noje.html">Kultur &amp; nöje</a>
+      </li>
+      <li>
+        <a role="menuitem" href="<%= APP_CONFIG['sv_base_url']%>Medborgare/Miljo--hallbarhet.html">Miljö &amp; hållbarhet</a>
+      </li>
+      <li>
+        <a role="menuitem" href="<%= APP_CONFIG['sv_base_url']%>Medborgare/Omsorg-vard--stod.html">Omsorg, vård &amp; stöd</a>
+      </li>
+      <li>
+        <a role="menuitem" href="<%= APP_CONFIG['sv_base_url']%>Medborgare/Social---familjefragor.html">Social- &amp; familjefrågor</a>
+      </li>
+      <li>
+        <a role="menuitem" href="<%= APP_CONFIG['sv_base_url']%>Medborgare/Stadsplanering--trafik.html">Stadsplanering &amp; trafik</a>
+      </li>
+    </ul>
+  </div>
+
+  <button type="button" class="m-icon-search-0" title="Sök på malmo.se" id="search-trigger" href="<%= APP_CONFIG['site_search_url'] %>"></button>
+
+  <div id="masthead-search" class="mf-2">
+    <form action="<%= APP_CONFIG['site_search_url'] %>" method="get">
+      <div class="input-group input-group-sm">
+        <input name="q" class="q form-control" placeholder="Sök på malmo.se" type="text" autocapitalize="off" autocorrect="off" data-autocomplete-url="<%= APP_CONFIG['site_search_ac_url'] %>" data-images-url="<%= APP_CONFIG['site_search_url'] %>" data-caller="Masthead"/>
+        <span class="input-group-btn">
+          <input name="utf8" type="hidden" value="&#x2713;"/>
+          <input class="btn btn-default" name="" type="submit" value="Sök"/>
+        </span>
+      </div>
+    </form>
+  </div>
+</header>

@@ -1,0 +1,8 @@
+.DS_Store
+config/deploy.yml
+log
+tmp
+doc
+_site
+.bundle
+/node_modules
