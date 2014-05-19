@@ -30,6 +30,7 @@ module AssetsContainer
       html5shiv-printshiv.js
       legacy/ie8.css
       icons.fallback.css
+      portwise.css
     )
     config.assets.paths += [
       Rails.root.join("assets", "icons").to_s,

@@ -6,3 +6,4 @@ doc
 _site
 .bundle
 /node_modules
+/public/assets
