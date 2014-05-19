@@ -1,8 +1,8 @@
 .m-icon-bubbles { background-image: url('png/bubbles.png'); background-repeat: no-repeat; }
 
+.dropdown-toggle,
 .m-icon-caret-down-0 { background-image: url('png/caret-down-0.png'); background-repeat: no-repeat; }
 
-.dropdown-toggle,
 .m-icon-caret-down { background-image: url('png/caret-down.png'); background-repeat: no-repeat; }
 
 .breadcrumbs li,

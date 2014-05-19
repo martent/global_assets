@@ -77,7 +77,7 @@
         border-width: 0 0 1px;
         padding: .9em 1em;
         background: $background-light;
-        &:hover {
+        &:hover, &:active, &:focus {
           background-color: $background-dark;
           color: #fff;
         }

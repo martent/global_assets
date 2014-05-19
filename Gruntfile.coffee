@@ -17,7 +17,7 @@ module.exports = (grunt) ->
           customselectors:
            "location": [".show-on-map"]
            "chevron-right": [".breadcrumbs li"]
-           "caret-down": [".dropdown-toggle"]
+           "caret-down-0": [".dropdown-toggle"]
           cssbasepath: '/'
           # defaultWidth: '300px',
           # defaultHeight: '200px',

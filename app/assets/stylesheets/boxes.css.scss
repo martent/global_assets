@@ -77,8 +77,6 @@
     background-color: transparent;
     &:hover {
       @include opacity(1);
-      text-decoration: none;
-      background-color: transparent;
     }
   }
 
@@ -94,6 +92,7 @@
       font-size: 1em;
       background-color: transparent;
       background-position: 50%;
+      background-size: 14px;
       display: inline-block;
       height: 1.45em;
       width: 1.6em;

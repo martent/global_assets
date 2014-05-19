@@ -113,7 +113,8 @@ a.dropdown-toggle {
     color: #000;
     &:hover, &:active, &:focus {
       outline: none;
-      border: none;
+      background-color: $background-dark;
+      color: #fff;
     }
   }
   // Round first/last inner elements to not get overshots
