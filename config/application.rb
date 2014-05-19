@@ -29,6 +29,8 @@ module AssetsContainer
       google_analytics.js
       html5shiv-printshiv.js
       legacy/ie8.css
+      icons.data.svg.css
+      icons.data.png.css
       icons.fallback.css
       portwise.css
     )
