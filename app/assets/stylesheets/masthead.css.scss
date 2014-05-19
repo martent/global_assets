@@ -11,8 +11,11 @@
     position: absolute;
     top: emize(5);
     left: .6em;
-    background: url('logo-x2.png') no-repeat;
-    background-size: auto 27px;
+    background: url('logo-x1.png') no-repeat;
+    @media (min-resolution: 2dppx), (-webkit-min-device-pixel-ratio: 2) {
+      background-image: url('logo-x2.png');
+    }
+    background-size: 178px 27px;
     height: 30px;
     width: 180px;
   }
