@@ -15,7 +15,6 @@ module.exports = (grunt) ->
           urlpngcss: "icons.fallback.css"
           cssprefix: '.m-icon-'
           customselectors:
-           "location": [".show-on-map"]
            "chevron-right": [".breadcrumbs li"]
            "caret-down-0": [".dropdown-toggle"]
           cssbasepath: '/'

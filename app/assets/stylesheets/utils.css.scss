@@ -2,20 +2,12 @@ a.close-map {
   position: absolute;
   top: .15em;
   left: .5em;
-  background: transparent;
   font-family: $sans-serif;
   font-size: emize(14);
   color: #000;
-  span {
-    margin-right: .4em;
-    color: $background-dark;
-  }
-  &:hover {
-    text-decoration: none;
-    span {
-      color: $danger-color;
-    }
-  }
+  padding-left: 1.4em;
+  background-size: 12px;
+  background-position: 0 40%;
 }
 
 .a11y {

@@ -28,7 +28,7 @@ jQuery ($) ->
       $selector.show().html($iframe.attr("src", urlForInlineMap($(@).attr("data-poi"))))
 
       # Place a close link on the map
-      $selector.prepend("<a href='#map' class='close-map'><span class='fa fa-times'></span>Stäng</a>")
+      $selector.prepend("<a href='#map' class='close-map m-icon-close'>Stäng</a>")
         .find("a").click (event)->
           event.preventDefault()
           $selector.hide()
@@ -38,4 +38,3 @@ jQuery ($) ->
         $('html, body').animate
           scrollTop: $($(@).attr("data-scroll-to")).offset().top - 45
         , 100
-      $(@).hide()
