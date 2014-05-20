@@ -7,7 +7,7 @@ jQuery ($) ->
         $(self).val($(self).attr('placeholder'))
 
     # Bind events
-    $('.malmo-form input[placeholder]').focus ->
+    $('.mf-v4 input[placeholder]').focus ->
       if $(@).val() is $(@).attr('placeholder')
         $(@).val('')
         $(@).removeClass('placeholder')
