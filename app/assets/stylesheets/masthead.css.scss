@@ -77,10 +77,6 @@
         border-width: 0 0 1px;
         padding: .9em 1em;
         background: $background-light;
-        &:hover, &:active, &:focus {
-          background-color: $background-dark;
-          color: #fff;
-        }
       }
       li:first-child a {
         @include radius(0);
@@ -159,10 +155,10 @@
 }
 
 // Don't enable the hover effect for touch devices
-body:not(.touch) #main-nav ul li a:hover {
-  a:hover {
-    background: $background-dark;
-    color: #fff;
+body:not(.touch) #main-nav ul li {
+  a:hover, a:active, a:focus {
+    background-color: $background-dark !important;
+    color: #fff !important;
   }
 }
 

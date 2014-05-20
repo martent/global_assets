@@ -1,4 +1,3 @@
-// Prevent iPhone from zooming forms
 body.touch {
   input[type='text'],
   input[type='password'],
@@ -15,12 +14,5 @@ body.touch {
   input[type='tel'],
   input[type='color'] {
     font-size: 16px;
-  }
-}
-
-// Prevent iPad Safari from hiding the last nav entry
-body.touch #masthead-others {
-  @media (min-width: 49em) {
-    margin-bottom: 2em;
   }
 }
