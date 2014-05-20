@@ -1,6 +1,8 @@
 // Prevent iPhone auto zoom on field focus
 @media (max-width: 46em) {
   body.touch {
+    select,
+    option,
     textarea,
     input[type='text'],
     input[type='password'],
