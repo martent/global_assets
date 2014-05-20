@@ -1,5 +1,6 @@
 //= require grunticon.loader
 //= require grunticons
+//= require utils
 //= require json2
 //= require maps
 //= require jquery.cookie
