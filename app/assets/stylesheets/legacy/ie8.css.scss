@@ -1,22 +1,58 @@
+@import 'variables';
+@import 'mixins';
+
 #malmo-masthead {
+  #search-trigger {
+    display: none;
+  }
+  // Only IE7
+  .q {
+    *padding-top: 0;
+    *padding-bottom: 0;
+    *height: 23px;
+    *width: 200px;
+    *overflow: auto;
+  }
+}
+
+#main-nav ul.dropdown-menu {
+  position: absolute;
+  top: 43px;
+  right: 0;
+  left: auto;
+  height: auto;
+  overflow-x: hidden;
+  min-width: 18em;
+  background: #fff;
+  padding: 0;
+  border-width: 0 0 1px 1px;
+  li a {
+    color: #000;
+    display: block;
+    line-height: 1.2;
+    border-width: 0 0 1px;
+    padding: .9em 1em;
+    &:hover {
+      color: #fff !important;
+      background: $background-dark !important;
+    }
+  }
 }
 
 .breadcrumbs li {
   display: block;
   float: left;
   margin-right: 1.5em;
+  margin-bottom: 2em;
 }
 
-.table-wrapper {
-  overflow: hidden;
-  width: auto;
-}
-
-form.basic .control-label {
-  width: 160px;
-}
-form.basic .controls {
-  display: inline-block;
-  padding-left: 20px;
-  margin-left: 0;
+.mf-v4 form.basic .form-group {
+  @include clearfix();
+  margin-bottom: 1em;
+  display: block;
+  input {
+    height: 25px;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
 }

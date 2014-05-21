@@ -1,4 +1,5 @@
 .breadcrumbs {
+  @include clearfix();
   list-style: none;
   margin: .5em 0 1.5em;
   padding: 0;
