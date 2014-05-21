@@ -19,6 +19,7 @@ Instructions for how you use the global assets in your application is documented
 ## Dependencies for Development and Deployment
 * Ruby 2.0
 * Rubygems and Bundler
+* [Grunt](http://gruntjs.com/) for Grunticon SVG and PNG management
 * [Bower](http://bower.io) to update the [`shared_assets`](https://github.com/malmostad/shared_assets)
 
 ## Dependencies for Asset Hosting
@@ -58,6 +59,21 @@ $ cap production deploy
 ```
 
 The compression levels for CSS and Javascript files are configured in `config/environments/` for development, staging and production.
+
+
+## Build Icons
+[Grunticon](https://github.com/filamentgroup/grunticon) is used to compile SVG icons into CSS files with PNG fallbacks. Master SVG files is in `masters/icons` and the output goes to `app/assets/icons`. To setup Grunticon, make sure you have [Grunt](http://gruntjs.com/) installed and then run the following command in the project root:
+
+```
+npm install
+```
+
+To rebuild all icons, run:
+```
+grunt
+```
+
+A preview of the icons is generated in `app/assets/icons/preview.html`.
 
 
 ## Development
