@@ -48,6 +48,12 @@
         @include columns(8, true);
       }
     }
+    .radio,
+    .checkbox,
+    .radio-inline,
+    .checkbox-inline {
+      padding-top: 3px;
+    }
   }
 }
 
