@@ -1,4 +1,4 @@
-.mf-v4 {
+.mf-v4  {
   h2.group-title {
     font-size: 14px;
     border-bottom: $border;
@@ -22,6 +22,14 @@
     }
     .help-block {
       color: $warning-color;
+    }
+  }
+  .input-group.date {
+    width: 12em;
+    .m-icon-calendar {
+      display: inline-block;
+      width: 1.1em;
+      height: 1.1em;
     }
   }
 }
