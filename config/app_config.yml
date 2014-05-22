@@ -9,8 +9,8 @@ development: &development
   <<: *default
   site_search_url: http://161.52.82.110:3000
   site_search_ac_url: http://161.52.82.110:3000/search/autocomplete
-  # asset_host: http://www.local.malmo.se:3001/assets/
-  asset_host: http://161.52.82.110:3001/assets/
+  asset_host: http://www.local.malmo.se:3001/assets/
+  # asset_host: http://161.52.82.110:3001/assets/
 
 test: &test
   <<: *development

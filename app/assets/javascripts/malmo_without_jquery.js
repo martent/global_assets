@@ -5,8 +5,8 @@
 //= require jquery.cookie
 //= require jquery-ui.custom.min
 //= require bootstrap_custom
-//= require bootstrap-datepicker
-//= require bootstrap-datepicker.sv
+//= require bootstrap-datepicker/core
+//= require bootstrap-datepicker/locales/bootstrap-datepicker.sv
 //= require jquery.tokeninput
 //= require boxes
 //= require content
