@@ -55,6 +55,10 @@
       padding-top: 3px;
     }
   }
+  .no-control-label {
+    display: block;
+    @extend .control-label;
+  }
 }
 
 ul.pagination {
