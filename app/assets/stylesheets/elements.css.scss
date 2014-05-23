@@ -63,7 +63,7 @@ table {
   td {
     font-family: $sans-serif;
     font-size: emize(14);
-    line-height: 1.35;
+    line-height: emize(19, 14);
     padding: .4em .6em;
     border-top: $border;
     border-bottom: $border;
