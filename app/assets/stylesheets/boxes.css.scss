@@ -17,9 +17,10 @@
     white-space: nowrap;
     text-overflow: ellipsis;
   }
-  &.light .box-title {
+  &.related .box-title {
     background-color: $background-light;
     color: #000;
+    border-bottom: $border;
   }
 
   .box-content {
@@ -33,6 +34,9 @@
     }
     ul {
       margin-left: 0;
+    }
+    ul:last-child {
+      margin-bottom: .5em;
     }
   }
 
