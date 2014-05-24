@@ -62,6 +62,10 @@
   @include box-shadow(none);
 }
 
+.btn-group .btn {
+  margin-right: 0;
+}
+
 ul.pagination {
   margin: 1em 0;
   padding: 0;
