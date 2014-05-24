@@ -3,27 +3,27 @@
 @import 'bootstrap/variables';
 @import 'bootstrap/mixins';
 
-// Limit the scope so third-party apps can have their own form styling
-.mf-v4 {
-  $btn-primary-bg: $btn-success-bg;
+$btn-primary-bg: $btn-success-bg;
 
-  $dropdown-border:            $border-color;
-  $dropdown-link-color:        #000;
-  $dropdown-link-hover-color:  #fff;
-  $dropdown-link-hover-bg:     $background-dark;
-  $dropdown-link-active-color: $dropdown-link-hover-color;
-  $dropdown-link-active-bg:    $dropdown-link-hover-bg;
+$dropdown-border:            $border-color;
+$dropdown-link-color:        #000;
+$dropdown-link-hover-color:  #fff;
+$dropdown-link-hover-bg:     $background-dark;
+$dropdown-link-active-color: $dropdown-link-hover-color;
+$dropdown-link-active-bg:    $dropdown-link-hover-bg;
 
-  @import 'bootstrap/forms';
-  @import 'bootstrap/buttons';
-  @import 'bootstrap/button-groups';
-  @import 'bootstrap/input-groups';
-  @import 'bootstrap/theme';
-}
-
+@import 'bootstrap/buttons';
+@import 'bootstrap/button-groups';
+@import 'bootstrap/input-groups';
 @import 'bootstrap/dropdowns';
 @import 'bootstrap/pagination';
 @import 'bootstrap/glyphicons';
 @import 'bootstrap/utilities';
 
+// Limit the scope so third-party apps can have their own form styling
+.mf-v4 {
+  @import 'bootstrap/forms';
+}
+
+@import 'bootstrap/theme';
 @import 'bootstrap_overrides';

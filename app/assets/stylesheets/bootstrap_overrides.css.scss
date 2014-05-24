@@ -8,18 +8,6 @@
     font-family: $sans-serif;
     font-size: 14px;
   }
-  .btn {
-    font-family: $sans-serif;
-  }
-
-  .btn-default,
-  .btn-primary,
-  .btn-success,
-  .btn-info,
-  .btn-warning,
-  .btn-danger {
-    @include box-shadow(none);
-  }
 
   .help-block {
     color: #000;
@@ -59,6 +47,19 @@
     display: block;
     @extend .control-label;
   }
+}
+
+.btn {
+  font-family: $sans-serif;
+}
+
+.btn-default,
+.btn-primary,
+.btn-success,
+.btn-info,
+.btn-warning,
+.btn-danger {
+  @include box-shadow(none);
 }
 
 ul.pagination {
