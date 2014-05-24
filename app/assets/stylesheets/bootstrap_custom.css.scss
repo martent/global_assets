@@ -12,6 +12,14 @@ $dropdown-link-hover-bg:     $background-dark;
 $dropdown-link-active-color: $dropdown-link-hover-color;
 $dropdown-link-active-bg:    $dropdown-link-hover-bg;
 
+$pagination-active-color:    #000;
+$pagination-active-bg:       $background-light-hover;
+$pagination-hover-bg:        $background-light-hover;
+$pagination-border:          $border-color;
+$pagination-hover-border:    $border-color;
+$pagination-active-border:   $border-color;
+
+
 @import 'bootstrap/buttons';
 @import 'bootstrap/button-groups';
 @import 'bootstrap/input-groups';
