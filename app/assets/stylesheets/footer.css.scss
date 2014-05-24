@@ -20,7 +20,8 @@ footer#malmo-footer {
     list-style: none;
   }
   address,
-  nav.about {
+  nav.about,
+  nav.alternatives {
     margin: 0 auto 1em;
     font-style: normal;
     text-align: center;
@@ -38,7 +39,8 @@ footer#malmo-footer {
   }
 
   address > div,
-  nav.about li a {
+  nav.about li a,
+  nav.alternatives li a {
     font-size: emize(14);
     line-height: emize(21, 14);
   }
@@ -51,12 +53,16 @@ footer#malmo-footer {
         margin: 0;
       }
     }
-    nav.about {
+    nav.about,
+    nav.alternatives {
       text-align: left;
       li {
         display: block;
         margin: 0 0 1em;
       }
+    }
+    nav.alternatives {
+      margin-bottom: 2em;
     }
   }
   &.fix {
