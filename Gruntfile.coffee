@@ -16,7 +16,7 @@ module.exports = (grunt) ->
           cssprefix: '.m-icon-'
           customselectors:
            "chevron-right": [".breadcrumbs li"]
-           "caret-down-0": [".dropdown-toggle"]
+           "caret-down-0": [".box-menu .dropdown-toggle"]
           cssbasepath: '/'
           # defaultWidth: '300px',
           # defaultHeight: '200px',
