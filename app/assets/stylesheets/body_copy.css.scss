@@ -23,7 +23,7 @@
   p, li {
     @extend %p.body-copy;
   }
-  td p, th p, li p {
+  td p, th p, li p, li li {
     font-size: 1em;
   }
 
