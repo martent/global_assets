@@ -57,7 +57,7 @@ namespace :build do
   task :default do
     run_locally("RAILS_ENV=#{rails_env} rake build:masthead")
     run_locally("RAILS_ENV=#{rails_env} rake build:footer")
-    run_locally("RAILS_ENV=#{rails_env} rake assets:clobber && rake assets:precompile assets:remove_digests")
+    run_locally("RAILS_ENV=#{rails_env} rake assets:clobber assets:precompile assets:remove_digests")
   end
 
   desc "Remove locally compiled assets"
