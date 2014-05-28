@@ -47,23 +47,63 @@
     display: block;
     @extend .control-label;
   }
-}
 
-.btn {
-  font-family: $sans-serif;
-}
+  .btn {
+    font-family: $sans-serif;
+  }
 
-.btn-default,
-.btn-primary,
-.btn-success,
-.btn-info,
-.btn-warning,
-.btn-danger {
-  @include box-shadow(none);
-}
+  .btn-default,
+  .btn-primary,
+  .btn-success,
+  .btn-info,
+  .btn-warning,
+  .btn-danger {
+    @include box-shadow(none);
+  }
 
-.btn-group .btn {
-  margin-right: 0;
+  .btn-group .btn {
+    margin-right: 0;
+  }
+
+  a.dropdown-toggle {
+    font-family: $sans-serif;
+    color: #000;
+    .icon-caret-down {
+      line-height: 1;
+      margin-left: .2em;
+    }
+  }
+
+  .dropdown-menu {
+    padding: 0;
+    margin: 0;
+    background: #fff;
+    font-size: emize(13);
+    font-family: $sans-serif;
+    li {
+      font-family: $sans-serif;
+      font-size: emize(14, 14);
+      margin: 0 !important;
+    }
+    li a {
+      display: block;
+      padding: .4em 1em;
+      cursor: pointer;
+      color: #000;
+      &:hover, &:active, &:focus {
+        outline: none;
+        background-color: $background-dark;
+        color: #fff;
+      }
+    }
+    // Round first/last inner elements to not get overshots
+    li:first-child a {
+      @include radius(2px 2px 0 0);
+    }
+    li:last-child a {
+      @include radius(0 0 2px 2px);
+    }
+  }
 }
 
 ul.pagination {
@@ -88,46 +128,6 @@ ul.pagination {
     a::after {
       content: ' \00BB';
     }
-  }
-}
-
-a.dropdown-toggle {
-  font-family: $sans-serif;
-  color: #000;
-  .icon-caret-down {
-    line-height: 1;
-    margin-left: .2em;
-  }
-}
-
-.dropdown-menu {
-  padding: 0;
-  margin: 0;
-  background: #fff;
-  font-size: emize(13);
-  font-family: $sans-serif;
-  li {
-    font-family: $sans-serif;
-    font-size: emize(14, 14);
-    margin: 0 !important;
-  }
-  li a {
-    display: block;
-    padding: .4em 1em;
-    cursor: pointer;
-    color: #000;
-    &:hover, &:active, &:focus {
-      outline: none;
-      background-color: $background-dark;
-      color: #fff;
-    }
-  }
-  // Round first/last inner elements to not get overshots
-  li:first-child a {
-    @include radius(2px 2px 0 0);
-  }
-  li:last-child a {
-    @include radius(0 0 2px 2px);
   }
 }
 
