@@ -23,7 +23,7 @@ set :asset_env, "RAILS_GROUPS=assets"
 set :deploy_via, :copy # Use local copy, be sure to update the stuff you want to deploy
 set :copy_exclude, ["log/*", "**/.git*", "tmp/*", "doc", "bootstrap", "**/.DS_Store",
   "**/*.example", "config/database.yml*", "config/deploy.yml*", "config/app_config.yml*",
-  ".bundle", ".ruby-version", ".gitignore", ".rspec", ".bowerrc", "package.json"]
+  ".bundle", ".ruby-version", ".gitignore", ".rspec", ".bowerrc", "package.json", "*.html"]
 
 default_run_options[:pty] = true
 ssh_options[:forward_agent] = true
