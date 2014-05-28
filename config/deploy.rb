@@ -23,7 +23,7 @@ set :asset_env, "RAILS_GROUPS=assets"
 set :deploy_via, :copy # Use local copy, be sure to update the stuff you want to deploy
 set :copy_exclude, ["log/*", "**/.git*", "tmp/*", "doc", "bootstrap", "**/.DS_Store",
   "**/*.example", "config/database.yml*", "config/deploy.yml*", "config/app_config.yml*",
-  ".bundle", ".ruby-version", ".gitignore", ".rspec", ".bowerrc", "package.json", "*.html"]
+  ".bundle", ".ruby-version", ".gitignore", ".rspec", ".bowerrc", "package.json"]
 
 default_run_options[:pty] = true
 ssh_options[:forward_agent] = true
@@ -55,9 +55,9 @@ end
 namespace :build do
   desc "Precompile assets locally"
   task :default do
-    run_locally("rake build:masthead RAILS_ENV=#{rails_env}")
-    run_locally("rake build:footer RAILS_ENV=#{rails_env}")
-    run_locally("rake assets:clobber && rake assets:precompile assets:remove_digests RAILS_ENV=#{rails_env}")
+    run_locally("RAILS_ENV=#{rails_env} rake build:masthead")
+    run_locally("RAILS_ENV=#{rails_env} rake build:footer")
+    run_locally("RAILS_ENV=#{rails_env} rake assets:clobber && rake assets:precompile assets:remove_digests")
   end
 
   desc "Remove locally compiled assets"
