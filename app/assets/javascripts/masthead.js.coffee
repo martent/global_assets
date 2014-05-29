@@ -20,8 +20,15 @@ jQuery ($) ->
 
     # Close on click outside the searchbox
     $('body > *').not('#malmo-masthead').one 'click', (event) ->
-      # event.preventDefault()
       hideSearch()
+
+    if $("body.touch").length
+      times = 0
+      i = setInterval ->
+        window.scrollTo(0, $mastheadSearch.offset().top)
+        if times++ > 100
+          clearInterval(i)
+      , 5
 
   $("#search-trigger").click (event) ->
     if $mastheadSearch.is(":hidden") then showSearch() else hideSearch()
@@ -30,3 +37,14 @@ jQuery ($) ->
   $(document).on 'keyup', (event) ->
     if event.which is 27
       hideSearch()
+
+
+  $mastheadSearch.find(".q").focus ->
+    if $("body.touch").length and not $mastheadSearch.hasClass("boxed")
+      $malmoMasthead = $("#malmo-masthead")
+      times = 0
+      i = setInterval ->
+        window.scrollTo(0, $malmoMasthead.offset().top)
+        if times++ > 100
+          clearInterval(i)
+      , 5
