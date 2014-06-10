@@ -42,6 +42,7 @@
 
 .m-icon-spinner { background-image: url('png/spinner.png'); background-repeat: no-repeat; }
 
+.act-now a::before,
 .m-icon-todo-0 { background-image: url('png/todo-0.png'); background-repeat: no-repeat; }
 
 .m-icon-todo { background-image: url('png/todo.png'); background-repeat: no-repeat; }
