@@ -48,10 +48,6 @@ p {
 blockquote {
   font-style: italic;
 }
-.table-wrapper {
-  width: 100%;
-  overflow: auto;
-}
 
 table {
   border-collapse: collapse;
@@ -72,6 +68,12 @@ table {
   &.full {
     width: 100%;
   }
+}
+
+.table-wrapper {
+  width: 100%;
+  overflow: auto;
+  margin-bottom: 1.5em;
 }
 
 input[type='button'],
