@@ -10,6 +10,9 @@ jQuery ($) ->
   $("#main-nav button").click ->
     hideSearch()
 
+  # Register main nav as a Bootstrap dropdown
+  $('#main-nav [data-toggle=dropdown]').dropdown()
+
   $mastheadSearch = $("#masthead-search")
 
   hideSearch = ->
