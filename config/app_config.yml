@@ -17,8 +17,6 @@ test: &test
 staging:
   <<: *default
   sv_base_url: http://www.test.malmo.se/
-  site_search_url: http://188.226.135.161/
-  site_search_ac_url: //188.226.135.161/search/autocomplete
   asset_host: //assets.malmo.se/external/v4-staging/
 
 production:
