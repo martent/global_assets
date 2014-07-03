@@ -63,9 +63,9 @@
   .img-secondary {
     float: right;
     margin: .3em 0 1em 1em;
-    width: 42%;
+    width: 48%;
     height: auto;
-    @media (max-width: 32em) {
+    @media (max-width: 30em) {
       float: none;
       width: 100%;
       margin: 0 0 1em;
