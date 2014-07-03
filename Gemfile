@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '~> 4.1.1'
+gem 'rails', '~> 4.1.4'
 gem 'spring'
 gem 'thin'
 gem 'jquery-rails'
@@ -11,7 +11,7 @@ gem 'uglifier'
 gem 'coffee-rails'
 # gem 'therubyracer', require: 'v8'
 
-gem 'bootstrap-sass' # Note: only a small subset of Bootstrap is used, see the files bootstrap-custom[scss|js]
+gem 'bootstrap-sass', '~> 3.1.1' # Note: only a small subset of Bootstrap is used, see the files bootstrap-custom[scss|js]
 gem 'bootstrap-datepicker-rails'
 
 gem 'capistrano', '~> 2.15.5'
