@@ -52,10 +52,24 @@
     text-decoration: none;
   }
 
-  img.full {
+  img.full,
+  .img-full {
     width: 100%;
     height: auto;
     margin: 0 0 1em;
+  }
+
+  img.secondary,
+  .img-secondary {
+    float: right;
+    margin: .3em 0 1em 1em;
+    width: 42%;
+    height: auto;
+    @media (max-width: 32em) {
+      float: none;
+      width: 100%;
+      margin: 0 0 1em;
+    }
   }
 
   p.caption {
@@ -65,7 +79,7 @@
     margin: 0 0 1.5em;
   }
 
-  img + p.caption {
+  img.full + p.caption {
     margin-top: -.8em;
   }
 
@@ -149,6 +163,10 @@
     th, td {
       vertical-align: top;
     }
+  }
+  img,
+  iframe {
+    max-width: 100%;
   }
 }
 
