@@ -11,7 +11,7 @@ gem 'uglifier'
 gem 'coffee-rails'
 # gem 'therubyracer', require: 'v8'
 
-gem 'bootstrap-sass', '~> 3.1.1' # Note: only a small subset of Bootstrap is used, see the files bootstrap-custom[scss|js]
+gem 'bootstrap-sass', '~> 3.2.0' # Note: only a small subset of Bootstrap is used, see the files bootstrap-custom[scss|js]
 gem 'bootstrap-datepicker-rails'
 
 gem 'capistrano', '~> 2.15.5'
