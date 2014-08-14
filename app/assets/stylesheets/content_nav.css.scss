@@ -5,6 +5,9 @@ nav.content {
     @extend %h1.aside;
     margin-bottom: 0;
     padding: 0 .3em .2em;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
   ul,
   ol {
