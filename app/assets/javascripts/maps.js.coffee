@@ -38,3 +38,8 @@ jQuery ($) ->
         $('html, body').animate
           scrollTop: $($(@).attr("data-scroll-to")).offset().top - 45
         , 100
+
+  # Show theme map
+  $(".theme-map button").click ->
+    $(@).parent().addClass("show")
+      .html $("<iframe scrolling='no' frameborder='0' src='#{$(@).attr("data-url")}'></iframe>")
