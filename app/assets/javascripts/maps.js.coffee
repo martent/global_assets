@@ -41,5 +41,12 @@ jQuery ($) ->
 
   # Show theme map
   $(".theme-map button").click ->
-    $(@).parent().addClass("show")
-      .html $("<iframe scrolling='no' frameborder='0' src='#{$(@).attr("data-url")}'></iframe>")
+    $box = $(@).parent()
+    $box.addClass("show")
+      .append $("<iframe scrolling='no' frameborder='0' src='#{$(@).attr("data-url")}'></iframe>")
+
+    # Place a close link on the map
+    $box.prepend("<a href='#' class='close-map m-icon-close'>Stäng</a>")
+      .find("a").click (event)->
+        event.preventDefault()
+        $box.removeClass("show").find("iframe, a.close-map").remove()
