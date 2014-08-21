@@ -1,8 +1,10 @@
 .theme-map {
+  margin: 1em 0;
   button {
     background-size: 1em;
-    background-position: 0 3px;
-    padding-left: 1.4em;
+    background-position: -4px 3px;
+    padding-left: 1.2em;
+    margin: 0;
     font-size: 14px;
   }
   &.show {
