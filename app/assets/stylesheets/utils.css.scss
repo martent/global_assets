@@ -37,7 +37,8 @@ a.close-map {
 
 body.test,
 body.staging,
-body.development {
+body.development,
+body.prototype {
   &::after {
     position: fixed;
     bottom: 3.4em;
@@ -75,6 +76,12 @@ body.test::after {
 
 body.staging::after {
   content: 'Staging';
+  padding-left: 5.5em;
+  padding-right: 5.5em;
+}
+
+body.prototype::after {
+  content: 'Prototype';
   padding-left: 5.5em;
   padding-right: 5.5em;
 }
