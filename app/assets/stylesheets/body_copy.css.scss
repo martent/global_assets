@@ -125,7 +125,7 @@
     &:before {
       position: absolute;
       display: block;
-      background: #43b02a;
+      background: $success-color;
       @include radius(3px 0 0 3px);
       top: 0;
       bottom: 0;
