@@ -5,9 +5,10 @@ jQuery ($) ->
 
   # Adjust scroll position for fixed masthead on page load and hashchange
   # To prevent this behaviour, set preventScrollForMasthead = true
-  $(window).on 'hashchange ready', ->
-    if $("#malmo-masthead").css('position') is 'fixed' and
-        (typeof preventScrollForMasthead is 'undefined' or preventScrollForMasthead is false)
-      setTimeout ->
+  $(window).on 'hashchange load', ->
+    setTimeout ->
+      if window.location.hash and $("#malmo-masthead").css('position') is 'fixed' and
+          (typeof preventScrollForMasthead is 'undefined' or preventScrollForMasthead is false) and
+          ($(window.location.hash).length and $(window.location.hash).offset().top - $(window).scrollTop() < 55)
         window.scrollBy(0, -60)
-      , 10
+    , 100
