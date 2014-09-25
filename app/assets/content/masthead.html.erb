@@ -1,90 +1,67 @@
-<header id="malmo-masthead" role="banner" class="mf-v4">
-  <div class="nav-logo">
-    <a href="<%= APP_CONFIG['sv_base_url']%>"></a>
-  </div>
+<header id="malmo-masthead">
+  <div class="nav-logo"><a href="<%= APP_CONFIG['dashboard_base_url'] %>">Komin</a></div>
 
-  <div class="dropdown" id="main-nav">
-    <button type="button" data-toggle="dropdown" class="m-icon-menu-0">
-      <span class="text">Meny</span>
-    </button>
-    <ul class="dropdown-menu" role="menu" aria-hidden="true" aria-labelledby="nav-trigger">
-      <% if Rails.env.production? # this conditional will be removed with the september 2014 release of malmo.se  %>
-        <li>
-          <a role="menuitem" href="<%= APP_CONFIG['sv_base_url']%>Medborgare/Biblioteken.html">Biblioteken</a>
-        </li>
-        <li>
-          <a role="menuitem" href="<%= APP_CONFIG['sv_base_url']%>Medborgare/Bo--bygga.html">Bo &amp; bygga</a>
-        </li>
-        <li>
-          <a role="menuitem" href="<%= APP_CONFIG['sv_base_url']%>Medborgare/Forskola--utbildning.html">Förskola &amp; utbildning</a>
-        </li>
-        <li>
-          <a role="menuitem" href="<%= APP_CONFIG['sv_base_url']%>Medborgare/Idrott--fritid.html">Idrott &amp; fritid</a>
-        </li>
-        <li>
-          <a role="menuitem" href="<%= APP_CONFIG['sv_base_url']%>Medborgare/Jobb--praktik.html">Jobb &amp; praktik</a>
-        </li>
-        <li>
-          <a role="menuitem" href="<%= APP_CONFIG['sv_base_url']%>Kommun--politik.html">Kommun &amp; politik</a>
-        </li>
-        <li>
-          <a role="menuitem" href="<%= APP_CONFIG['sv_base_url']%>Medborgare/Kultur--noje.html">Kultur &amp; nöje</a>
-        </li>
-        <li>
-          <a role="menuitem" href="<%= APP_CONFIG['sv_base_url']%>Medborgare/Miljo--hallbarhet.html">Miljö &amp; hållbarhet</a>
-        </li>
-        <li>
-          <a role="menuitem" href="<%= APP_CONFIG['sv_base_url']%>Medborgare/Omsorg-vard--stod.html">Omsorg, vård &amp; stöd</a>
-        </li>
-        <li>
-          <a role="menuitem" href="<%= APP_CONFIG['sv_base_url']%>Medborgare/Social---familjefragor.html">Social- &amp; familjefrågor</a>
-        </li>
-        <li>
-          <a role="menuitem" href="<%= APP_CONFIG['sv_base_url']%>Medborgare/Stadsplanering--trafik.html">Stadsplanering &amp; trafik</a>
-        </li>
-      <% else %>
-        <li>
-          <a role="menuitem" href="<%= APP_CONFIG['sv_base_url']%>Medborgare/Bo-bygga--miljo.html">Bo, bygga &amp; miljö</a>
-        </li>
-        <li>
-          <a role="menuitem" href="<%= APP_CONFIG['sv_base_url']%>Medborgare/Foretagande--jobb.html">Företagande &amp; jobb</a>
-        </li>
-        <li>
-          <a role="menuitem" href="<%= APP_CONFIG['sv_base_url']%>Medborgare/Forskola--utbildning.html">Förskola &amp; utbildning</a>
-        </li>
-        <li>
-          <a role="menuitem" href="<%= APP_CONFIG['sv_base_url']%>Medborgare/Kommun--politik.html">Kommun &amp; politik</a>
-        </li>
-        <li>
-          <a role="menuitem" href="<%= APP_CONFIG['sv_base_url']%>Medborgare/Kultur--fritid.html">Kultur &amp; fritid</a>
-        </li>
-        <li>
-          <a role="menuitem" href="<%= APP_CONFIG['sv_base_url']%>Medborgare/Omsorg-vard--stod.html">Omsorg, vård &amp; stöd</a>
-        </li>
-        <li>
-          <a role="menuitem" href="<%= APP_CONFIG['sv_base_url']%>Medborgare/Social---familjefragor.html">Social- &amp; familjefrågor</a>
-        </li>
-        <li>
-          <a role="menuitem" href="<%= APP_CONFIG['sv_base_url']%>Medborgare/Stadsplanering--trafik.html">Stadsplanering &amp; trafik</a>
-        </li>
-        <li>
-          <a role="menuitem" href="<%= APP_CONFIG['sv_base_url']%>Medborgare/Blanketter--tjanster.html">Tjänster &amp; blanketter</a>
-        </li>
-      <% end %>
+  <ul id="nav-triggers">
+    <li id="nav-menu-trigger"><a href="#">Meny <span class="icon-reorder icon-large"></span></a></li>
+    <li id="nav-search-trigger"><a href="<%= APP_CONFIG['site_search_url'] %>">Sök <span class="icon-search icon-large"></span></a></li>
+  </ul>
+
+  <nav class="masthead-main">
+    <ul>
+      <li id="nav-dashboard"><a href="<%= APP_CONFIG['dashboard_base_url'] %>">Min sida</a></li>
+      <li id="nav-my-department">
+        <a href="<%= APP_CONFIG['dashboard_base_url'] %>my_roles">Min förvaltning</a>
+      </li>
+      <li id="nav-my-workingfield">
+        <a href="<%= APP_CONFIG['dashboard_base_url'] %>my_roles">Mitt arbetsfält</a>
+      </li>
+      <li id="nav-our-organization"><a href="<%= APP_CONFIG['sv_base_url'] %>Var-kommun">Vår kommun</a></li>
+      <li id="nav-hrutan"><a href="<%= APP_CONFIG['sv_base_url'] %>minanstallning">Min anställning</a></li>
+      <li id="nav-more" class="dropdown">
+        <a class="dropdown-toggle more-items" data-toggle="dropdown" href="#">Mer <span class="icon-caret-down icon-large"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="<%= APP_CONFIG['dashboard_base_url'] %>my_profile">Min profil</a></li>
+          <li><a href="<%= APP_CONFIG['sv_base_url'] %>blogg">Blogg</a></li>
+          <li><a href="<%= APP_CONFIG['sv_base_url'] %>forum">Forum</a></li>
+          <li><a href="<%= APP_CONFIG['sv_base_url'] %>nyheter">Nyheter</a></li>
+          <li><a href="http://www.personalavin.se/">Personalavin</a></li>
+          <li><a href="<%= APP_CONFIG['sv_base_url'] %>webbvideo">Webbvideo</a></li>
+          <li><a href="<%= APP_CONFIG['sv_base_url'] %>wiki">Wiki</a></li>
+        </ul>
+      </li>
     </ul>
-  </div>
+  </nav>
 
-  <button type="button" class="m-icon-search-0" title="Sök på malmo.se" id="search-trigger"></button>
+  <div id="masthead-search" class="malmo-form">
+    <form action="<%= APP_CONFIG['site_search_url'] %>" id="masthead-search-intranet">
+      <div>
+        <input name="utf8" type="hidden" value="&#x2713;"/>
+        <label for="masthead-q-komin" class="add-on icon-file-text-alt icon-large"></label>
+        <input name="q" id="masthead-q-komin" class="text q" placeholder="Ett eller flera sökord" type="text" data-autocomplete-url="<%= APP_CONFIG['site_search_url'] %>/autocomplete"/>
+        <input class="btn" type="submit" value="Sök på Komin"/>
+      </div>
+    </form>
 
-  <div id="masthead-search" class="mf-v4">
-    <form action="<%= APP_CONFIG['site_search_url'] %>" method="get">
-      <div class="input-group input-group-sm">
-        <input name="q" class="q form-control" placeholder="Sök på malmo.se" type="text" autocapitalize="off" autocorrect="off" data-autocomplete-url="<%= APP_CONFIG['site_search_ac_url'] %>" data-images-url="<%= APP_CONFIG['site_search_url'] %>" data-caller="Masthead"/>
-        <span class="input-group-btn">
-          <input name="utf8" type="hidden" value="&#x2713;"/>
-          <input class="btn btn-default" name="" type="submit" value="Sök"/>
-        </span>
+    <span class="icon-search icon-large"></span>
+
+    <form action="<%= APP_CONFIG['dashboard_base_url'] %>users/search" id="masthead-search-person">
+      <div class="input-append input-prepend">
+        <input name="utf8" type="hidden" value="&#x2713;"/>
+        <label for="masthead-q-employee" class="add-on icon-user icon-large"></label>
+        <input name="q" id="masthead-q-employee" class="text" placeholder="För- och/eller efternamn" type="text" data-autocomplete-url="<%= APP_CONFIG['dashboard_base_url'] %>users/suggest"/>
+        <input class="btn" type="submit" value="Sök person"/>
       </div>
     </form>
   </div>
+
+  <nav id="masthead-others">
+    <ul>
+      <li class="map">
+        <a href="<%= APP_CONFIG['sv_base_url'] %>karta" title="Karta" alt="Karta"><span class="icon-map-marker icon-large"></span></a>
+      </li>
+      <li class="phone">
+        <a href="http://srvwinucweb01.uc.malmo.se/cmgoffice" title="Styr telefonen" alt="Styr telefonen"><span class="icon-phone icon-large"></span></a>
+      </li>
+    </ul>
+  </nav>
 </header>

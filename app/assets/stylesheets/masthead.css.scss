@@ -1,168 +1,241 @@
 #malmo-masthead {
-  background-color: $masthead-background;
   position: fixed;
-  height: emize(43);
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1000;
+  z-index: 100;
+  background-color: $masthead-background;
+  @include box-shadow(0 2px 2px rgba(0, 0, 0, .2));
+  min-width: 61em;
+  min-height: emize(41);
 
-  .nav-logo a {
+  #nav-triggers {
+    // Activated in media_queries.scss
+    display: none;
     position: absolute;
-    top: emize(5);
-    left: .6em;
-    background: url('logo-x1.png') no-repeat;
-    @media (min-resolution: 2dppx), (-webkit-min-device-pixel-ratio: 2) {
-      background-image: url('logo-x2.png');
-    }
-    background-size: 178px 27px;
-    height: 30px;
-    width: 180px;
+    right: 0;
+    top: 0;
   }
 
-  #main-nav {
-    button {
-      font-size: 1em;
-      float: right;
-      height: emize(30);
-      padding: 0;
-      margin: emize(6) .8em 0 0;
-      cursor: pointer;
-      background-color: $masthead-background;
-      background-position: 85% 50%;
-      border: 1px solid #fff;
-      @include radius(3px);
-      .text {
-        font-size: emize(16);
-        display: inline-block;
-        margin: emize(2) 2.8em emize(4) emize(12);
-        line-height:  1;
-        font-family: $sans-serif;
-        color: #fff;
-      }
-
-      @media (max-width: 23em) {
-        border: none;
-        margin-right: .4em;
-        width: emize(40);
-        span.text {
-          display: none;
-        }
-      }
-    }
-
-    ul.dropdown-menu {
-      position: absolute;
-      top: 43px;
-      right: 0;
-      left: auto;
-      height: auto;
-      overflow-x: hidden;
-      min-width: 18em;
-      background: #fff;
-      padding: 0;
-      @include radius(0 0 0 4px);
-      border-width: 0 0 1px 1px;
-      border-color: $border-color;
-      @media (max-width: 23em) {
-        width: 100%;
-      }
-      li a {
-        color: #000;
-        display: block;
-        font-family: $sans-serif;
-        font-size: emize(14, 13);
-        line-height: 1.2;
-        border: $border;
-        border-width: 0 0 1px;
-        padding: .9em 1em;
-        background: $background-light;
-      }
-      li:first-child a {
-        @include radius(0);
-      }
-      li:last-child a {
-        border-width: 0;
-      }
-    }
-  }
-
-  #search-trigger {
-    font-size: 1em;
-    display: block;
-    float: right;
-    width: emize(40);
-    height: emize(30);
-    padding: 0;
-    margin: emize(6) .6em 0 0;
-    color: #fff;
-    background-color: $masthead-background;
-    background-position: 50% 50%;
-    border: none;
-    cursor: pointer;
-    @media (max-width: 23em) {
-      margin-right: 0;
-    }
-    @media (min-width: 42em) {
-      display: none;
-    }
-  }
-
-  #masthead-search {
-    float: right;
-    margin: emize(6) 1em 0 0;
-    width: 20em;
-    input[type=text] {
-      border-top-left-radius: 3px;
-      border-bottom-left-radius: 3px;
-      font-size: 14px;
-      padding-top: 4px;
-    }
-    .btn {
-      font-size: 14px;
-      padding-top: 2px;
-    }
-
-    @media (max-width: 41.99em) {
-      display: none;
-    }
-    &.boxed {
-      position: absolute;
+  #nav-search-trigger,
+  #nav-menu-trigger,
+  > nav > ul > li {
+    float: left;
+    > a {
       display: block;
       @include box-sizing(border-box);
-      top: emize(43);
-      right: 0;
-      left: 0;
-      margin: 0;
-      width: 100%;
       overflow: hidden;
-      padding: 1.4em .8em;
-      border-bottom: $border;
-      background: $background-light;
-      @include box-shadow(0 2px 5px rgba(0, 0, 0, .5));
+      white-space: nowrap;
+      padding: emize(13, 13) 1em emize(14, 13);
+      margin: 0 -1px 0 0;
+      color: $masthead-color;
+      font-family: $sans-serif;
+      font-size: emize(13);
+      line-height: emize(15, 13);
+      height: emize(41, 13);
+      outline: 0;
+      border: transparent solid;
+      border-width: 0 1px;
+      &.dropdown-toggle {
+        padding-right: .8em;
+        color: $masthead-color;
+      }
+      &.dropdown-toggle.more-items {
+        span.icon-caret-down {
+          line-height: .8;
+          margin-left: .3em;
+        }
+      }
+      &.dropdown-toggle.no-arrow {
+        padding-right: 1em;
+      }
     }
+    > a:hover,
+    > a:focus,
+    &.open > a {
+      background: $masthead-background-highlight;
+      border-color: transparent $masthead-color;
+    }
+    ul.dropdown-menu {
+      top: 3.1em;
+      white-space: nowrap;
+    }
+    span.icon-reorder {
+      margin-left: .3em;
+      line-height: .8;
+    }
+    span.icon-search {
+      margin-left: .4em;
+      line-height: .8;
+      position: relative;
+      top: -1px;
+    }
+  }
 
+  #nav-search-trigger a:hover {
+    border-right-color: black;
+  }
+
+  > nav#masthead-others > ul {
+    li {
+      float: left;
+    }
+    li.phone a span {
+      position: relative;
+      top: emize(-1, 13);
+    }
+    li.map a  span {
+      position: relative;
+      top: emize(-2, 13);
+    }
+  }
+
+  #nav-my-department, #nav-my-workingfield {
+    .icon-caret-down {
+      display: none;
+    }
+  }
+
+  // Search box, minimal
+  #masthead-search {
+    position: relative;
+    float: right;
+    @include box-sizing(border-box);
+    top: emize(6);
+    right: emize(10);
+    #masthead-search-intranet input.text {
+      max-height: 18px;
+    }
     form {
       margin-bottom: 0;
     }
+    input.text {
+      width: 14em;
+    }
+    #masthead-search-person,
+    .btn, .add-on {
+      display: none;
+    }
+    .icon-search {
+      position: absolute;
+      right: .5em;
+      top: .3em;
+      display: block;
+      color: $masthead-background;
+      font-size: emize(14);
+    }
   }
+  // Search box, expanded
+  #masthead-search.expanded {
+    position: absolute;
+    top: emize(41);
+    right: 0;
+    border: $border;
+    border-width: 0 0 1px 1px;
+    background: $background-light;
+    padding: 1.2em;
+    @include radius(0 0 0 3px);
+    @include box-shadow(2px 2px 3px rgba(0, 0, 0, .2));
+    #masthead-search-person {
+      display: block;
+    }
+    #masthead-search-intranet {
+      margin-bottom: .6em;
+      input.text {
+        max-height: none;
+      }
+    }
+    .btn, .add-on {
+      display: inline-block;
+    }
+    input.text {
+      width: 25em;
+    }
+    .icon-search {
+      display: none;
+    }
+  }
+
+  .nav-logo {
+    display: block;
+    float: left;
+    padding: 0 0 0 .5em;
+    font-family: $sans-serif;
+    line-height: 1;
+    background: url("logo-x1.png") 10px 5px no-repeat;
+    background-size: 24px;
+    a, span {
+      display: block;
+      color: $masthead-color-highlight;
+      @include box-sizing(border-box);
+      padding: emize(6) emize(12) emize(6) emize(24);
+      border: none;
+      font-weight: bold;
+      font-size: emize(23);
+      line-height: 1;
+      text-transform: uppercase;
+    }
+  }
+}
+
+// Add on of the class selectors to the body
+// to get an active nav item
+.malmo-masthead-dashboard #nav-dashboard,
+.malmo-masthead-my-department #nav-my-department,
+.malmo-masthead-my-workingfield #nav-my-workingfield,
+.malmo-masthead-our-organization #nav-our-organization,
+.malmo-masthead-hrutan #nav-hrutan,
+.malmo-masthead-more #nav-more-items,
+.malmo-masthead-map #masthead-others .map,
+.malmo-masthead-search #nav-search-trigger {
+  > a {
+    background: $masthead-background-highlight;
+    border-color: transparent $masthead-color;
+  }
+}
+.malmo-masthead-search #nav-search-trigger > a {
+  border-left: 1px solid $masthead-color !important;
+}
+
+.service-title, .app-title {
+  padding: .5em .9em;
+  line-height: 1;
+  margin: 0 0 1em;
+  background-color: $background-light;
+  border: $border;
+  border-width: 1px 0;
+  font-size: emize(13);
+  font-weight: normal;
+  font-family: $sans-serif;
   a {
-    color: #fff;
-  }
-  a:hover {
-    text-decoration: none;
+    color: #000;
   }
 }
-
-// Don't enable the hover effect for touch devices
-body:not(.touch) #main-nav ul li {
-  a:hover, a:active, a:focus {
-    background-color: $background-dark !important;
-    color: #fff !important;
-  }
+ul.ui-autocomplete li .hits {
+  float: right;
+}
+ul.ui-autocomplete.masthead-ac {
+  min-width: 17em;
+  z-index: 1000;
 }
 
-body.touch #main-nav ul {
-  overflow-y: scroll;
-  -webkit-overflow-scrolling: touch;
+// Autocomplete list for user search
+ul.ui-autocomplete.search_users {
+  z-index: 1000;
+  .ui-menu-item > a.ui-corner-all {
+    padding: .5em 1em .7em .5em;
+    clear: left;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: emize(13);
+    img {
+      float: left;
+      margin-top: 3px;
+      height: 32px;
+      width: 32px;
+    }
+    p {
+      margin: 0 0 0 40px;
+    }
+  }
 }
