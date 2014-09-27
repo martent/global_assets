@@ -4,6 +4,8 @@ default: &default
   site_search_url: http://s1.malmo.se
   site_search_ac_url: http://s1.malmo.se/search/autocomplete
   asset_host: //assets.malmo.se/external/v4/
+  audience: internal
+  # audience: external
 
 development: &development
   <<: *default

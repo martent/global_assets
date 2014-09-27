@@ -1,5 +1,6 @@
 {
   "name": "malmo_shared_assets",
+  "version": "1.0.0",
   "authors": [
     "The City of Malmo"
   ],
@@ -24,15 +25,5 @@
     "bower_components",
     "test",
     "tests"
-  ],
-  "_release": "d0191e2be1",
-  "_resolution": {
-    "type": "branch",
-    "branch": "master",
-    "commit": "d0191e2be1a8baac905336a563e97765bbec010d"
-  },
-  "_source": "git://github.com/malmostad/shared_assets.git",
-  "_target": "*",
-  "_originalSource": "malmostad/shared_assets",
-  "_direct": true
+  ]
 }
