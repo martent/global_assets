@@ -8,69 +8,33 @@
       <span class="text">Meny</span>
     </button>
     <ul class="dropdown-menu" role="menu" aria-hidden="true" aria-labelledby="nav-trigger">
-      <% if Rails.env.production? # this conditional will be removed with the september 2014 release of malmo.se  %>
-        <li>
-          <a role="menuitem" href="<%= APP_CONFIG['sv_base_url']%>Medborgare/Biblioteken.html">Biblioteken</a>
-        </li>
-        <li>
-          <a role="menuitem" href="<%= APP_CONFIG['sv_base_url']%>Medborgare/Bo--bygga.html">Bo &amp; bygga</a>
-        </li>
-        <li>
-          <a role="menuitem" href="<%= APP_CONFIG['sv_base_url']%>Medborgare/Forskola--utbildning.html">Förskola &amp; utbildning</a>
-        </li>
-        <li>
-          <a role="menuitem" href="<%= APP_CONFIG['sv_base_url']%>Medborgare/Idrott--fritid.html">Idrott &amp; fritid</a>
-        </li>
-        <li>
-          <a role="menuitem" href="<%= APP_CONFIG['sv_base_url']%>Medborgare/Jobb--praktik.html">Jobb &amp; praktik</a>
-        </li>
-        <li>
-          <a role="menuitem" href="<%= APP_CONFIG['sv_base_url']%>Kommun--politik.html">Kommun &amp; politik</a>
-        </li>
-        <li>
-          <a role="menuitem" href="<%= APP_CONFIG['sv_base_url']%>Medborgare/Kultur--noje.html">Kultur &amp; nöje</a>
-        </li>
-        <li>
-          <a role="menuitem" href="<%= APP_CONFIG['sv_base_url']%>Medborgare/Miljo--hallbarhet.html">Miljö &amp; hållbarhet</a>
-        </li>
-        <li>
-          <a role="menuitem" href="<%= APP_CONFIG['sv_base_url']%>Medborgare/Omsorg-vard--stod.html">Omsorg, vård &amp; stöd</a>
-        </li>
-        <li>
-          <a role="menuitem" href="<%= APP_CONFIG['sv_base_url']%>Medborgare/Social---familjefragor.html">Social- &amp; familjefrågor</a>
-        </li>
-        <li>
-          <a role="menuitem" href="<%= APP_CONFIG['sv_base_url']%>Medborgare/Stadsplanering--trafik.html">Stadsplanering &amp; trafik</a>
-        </li>
-      <% else %>
-        <li>
-          <a role="menuitem" href="<%= APP_CONFIG['sv_base_url']%>Medborgare/Bo-bygga--miljo.html">Bo, bygga &amp; miljö</a>
-        </li>
-        <li>
-          <a role="menuitem" href="<%= APP_CONFIG['sv_base_url']%>Medborgare/Foretagande--jobb.html">Företagande &amp; jobb</a>
-        </li>
-        <li>
-          <a role="menuitem" href="<%= APP_CONFIG['sv_base_url']%>Medborgare/Forskola--utbildning.html">Förskola &amp; utbildning</a>
-        </li>
-        <li>
-          <a role="menuitem" href="<%= APP_CONFIG['sv_base_url']%>Medborgare/Kommun--politik.html">Kommun &amp; politik</a>
-        </li>
-        <li>
-          <a role="menuitem" href="<%= APP_CONFIG['sv_base_url']%>Medborgare/Kultur--fritid.html">Kultur &amp; fritid</a>
-        </li>
-        <li>
-          <a role="menuitem" href="<%= APP_CONFIG['sv_base_url']%>Medborgare/Omsorg-vard--stod.html">Omsorg, vård &amp; stöd</a>
-        </li>
-        <li>
-          <a role="menuitem" href="<%= APP_CONFIG['sv_base_url']%>Medborgare/Social---familjefragor.html">Social- &amp; familjefrågor</a>
-        </li>
-        <li>
-          <a role="menuitem" href="<%= APP_CONFIG['sv_base_url']%>Medborgare/Stadsplanering--trafik.html">Stadsplanering &amp; trafik</a>
-        </li>
-        <li>
-          <a role="menuitem" href="<%= APP_CONFIG['sv_base_url']%>Medborgare/Blanketter--tjanster.html">Tjänster &amp; blanketter</a>
-        </li>
-      <% end %>
+      <li>
+        <a role="menuitem" href="<%= APP_CONFIG['sv_base_url']%>Medborgare/Bo-bygga--miljo.html">Bo, bygga &amp; miljö</a>
+      </li>
+      <li>
+        <a role="menuitem" href="<%= APP_CONFIG['sv_base_url']%>Medborgare/Foretagande--jobb.html">Företagande &amp; jobb</a>
+      </li>
+      <li>
+        <a role="menuitem" href="<%= APP_CONFIG['sv_base_url']%>Medborgare/Forskola--utbildning.html">Förskola &amp; utbildning</a>
+      </li>
+      <li>
+        <a role="menuitem" href="<%= APP_CONFIG['sv_base_url']%>Medborgare/Kommun--politik.html">Kommun &amp; politik</a>
+      </li>
+      <li>
+        <a role="menuitem" href="<%= APP_CONFIG['sv_base_url']%>Medborgare/Kultur--fritid.html">Kultur &amp; fritid</a>
+      </li>
+      <li>
+        <a role="menuitem" href="<%= APP_CONFIG['sv_base_url']%>Medborgare/Omsorg-vard--stod.html">Omsorg, vård &amp; stöd</a>
+      </li>
+      <li>
+        <a role="menuitem" href="<%= APP_CONFIG['sv_base_url']%>Medborgare/Social---familjefragor.html">Social- &amp; familjefrågor</a>
+      </li>
+      <li>
+        <a role="menuitem" href="<%= APP_CONFIG['sv_base_url']%>Medborgare/Stadsplanering--trafik.html">Stadsplanering &amp; trafik</a>
+      </li>
+      <li>
+        <a role="menuitem" href="<%= APP_CONFIG['sv_base_url']%>Medborgare/Blanketter--tjanster.html">Tjänster &amp; blanketter</a>
+      </li>
     </ul>
   </div>
 
