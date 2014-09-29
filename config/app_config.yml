@@ -1,20 +1,16 @@
-# Used for content/masthead
+# External audience
 default: &default
   sv_base_url: http://www.malmo.se/
   site_search_url: http://s1.malmo.se
   site_search_ac_url: http://s1.malmo.se/search/autocomplete
   asset_host: //assets.malmo.se/external/v4/
-  audience: internal
-  # audience: external
+  audience: external
 
 development: &development
   <<: *default
   site_search_url: http://www.local.malmo.se:3000
   site_search_ac_url: http://www.local.malmo.se:3000/search/autocomplete
   asset_host: http://www.local.malmo.se:3001/assets/
-
-test: &test
-  <<: *development
 
 staging:
   <<: *default
@@ -23,3 +19,23 @@ staging:
 
 production:
   <<: *default
+
+
+# Internal audience
+default_internal: &default_internal
+  sv_base_url: http://komin.malmo.se/
+  site_search_url: http://webapps06.malmo.se/search
+  site_search_ac_url: http://webapps06.malmo.se/search/autocomplete
+  asset_host: //assets.malmo.se/internal/v4/
+  audience: internal
+
+development_internal: &development_internal
+  <<: *default_internal
+
+staging_internal:
+  <<: *default_internal
+  sv_base_url: http://komin.test.malmo.se/
+  asset_host: //assets.malmo.se/internal/v4-staging/
+
+production_internal:
+  <<: *default_internal

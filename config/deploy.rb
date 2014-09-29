@@ -14,8 +14,7 @@ set :server_address, config['server_address']
 server server_address, :web
 set :use_sudo, false
 
-set :stages, %w(staging production)
-set :default_stage, "staging"
+set :stages, %w(staging production staging_internal production_internal)
 
 set :application, "assets"
 set :asset_env, "RAILS_GROUPS=assets"
