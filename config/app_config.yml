@@ -20,7 +20,6 @@ staging:
 production:
   <<: *default
 
-
 # Internal audience
 default_internal: &default_internal
   sv_base_url: http://komin.malmo.se/
@@ -29,8 +28,8 @@ default_internal: &default_internal
   asset_host: //assets.malmo.se/internal/v4/
   audience: internal
 
-development_internal: &development_internal
-  <<: *default_internal
+development_internal:
+  <<: *development
 
 staging_internal:
   <<: *default_internal

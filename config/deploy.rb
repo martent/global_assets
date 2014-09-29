@@ -15,7 +15,6 @@ set :use_sudo, false
 set :stages, %w(staging production staging_internal production_internal)
 
 set :application, "assets"
-set :asset_env, "RAILS_GROUPS=assets"
 
 set :deploy_via, :copy # Use local copy, be sure to update the stuff you want to deploy
 set :copy_exclude, ["log/*", "**/.git*", "tmp/*", "doc", "bootstrap", "**/.DS_Store",
