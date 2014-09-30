@@ -1,14 +1,14 @@
-namespace :build do
+ namespace :build do
   desc "Convert masthead erb to a javascript string variable"
   task masthead: :environment do
-    jsify('app/assets/content/masthead.html.erb', 'app/assets/javascripts/masthead_content.js', 'malmoMasthead')
-    puts "Generated masthead for #{Rails.env}"
+    jsify("app/assets/content/masthead_#{APP_CONFIG['audience']}.html.erb", 'app/assets/javascripts/masthead_content.js', 'malmoMasthead')
+    puts "Generated masthead environment \033[32;1m#{Rails.env}\033[0m and audience \033[32;1m#{APP_CONFIG['audience']}\033[0m"
   end
 
   desc "Convert footer erb to a javascript string variable"
   task footer: :environment do
-    jsify('app/assets/content/footer.html.erb', 'app/assets/javascripts/footer_content.js', 'malmoFooter')
-    puts "Generated footer for #{Rails.env}"
+    jsify("app/assets/content/footer_#{APP_CONFIG['audience']}.html.erb", 'app/assets/javascripts/footer_content.js', 'malmoFooter')
+    puts "Generated footer for environment \033[32;1m#{Rails.env}\033[0m and audience \033[32;1m#{APP_CONFIG['audience']}\033[0m"
   end
 
   private
