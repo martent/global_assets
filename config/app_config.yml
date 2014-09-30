@@ -1,4 +1,6 @@
 # External audience
+# No namespaces for external environments as in `_internal` below
+# "External" is public web services and "internal" is for the intranet, Komin
 default: &default
   sv_base_url: http://www.malmo.se/
   site_search_url: http://s1.malmo.se
