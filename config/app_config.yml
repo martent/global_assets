@@ -7,17 +7,20 @@ default: &default
   site_search_ac_url: http://s1.malmo.se/search/autocomplete
   asset_host: //assets.malmo.se/external/v4/
   audience: external
+  ua_account: 'UA-331614-1'
 
 development: &development
   <<: *default
   site_search_url: http://www.local.malmo.se:3000
   site_search_ac_url: http://www.local.malmo.se:3000/search/autocomplete
   asset_host: http://www.local.malmo.se:3001/assets/
+  ua_account: 'UA-19475063-1'
 
 staging:
   <<: *default
   sv_base_url: http://www.test.malmo.se/
   asset_host: //assets.malmo.se/external/v4-staging/
+  ua_account: 'UA-19475063-1'
 
 production:
   <<: *default
@@ -29,14 +32,17 @@ default_internal: &default_internal
   site_search_ac_url: http://webapps06.malmo.se/search/autocomplete
   asset_host: //assets.malmo.se/internal/v4/
   audience: internal
+  ua_account: 'UA-1659147-1'
 
 development_internal:
   <<: *development
+  ua_account: 'UA-19475064-1'
 
 staging_internal:
   <<: *default_internal
   sv_base_url: http://komin.test.malmo.se/
   asset_host: //assets.malmo.se/internal/v4-staging/
+  ua_account: 'UA-19475064-1'
 
 production_internal:
   <<: *default_internal

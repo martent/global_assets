@@ -1,7 +1,4 @@
-window.UAAccount = 'UA-331614-1'
-# Use GA test account for dev and test instances
-if $("body.test, body.development, body.staging, body.prototype").length
-  window.UAAccount = 'UA-19475063-1'
+window.UAAccount = '<%= APP_CONFIG["ua_account"] %>'
 
 window._gaq = []
 _gaq.push(['_setAccount', UAAccount])
