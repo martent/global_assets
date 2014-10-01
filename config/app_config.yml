@@ -36,6 +36,7 @@ default_internal: &default_internal
 
 development_internal:
   <<: *development
+  audience: internal
   ua_account: 'UA-19475064-1'
 
 staging_internal:
