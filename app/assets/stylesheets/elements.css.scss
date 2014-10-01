@@ -15,6 +15,7 @@ body {
   // -webkit-font-feature-settings: 'liga', 'kern'; // Bug in Chrome 35 removes space before links in text
   -o-font-feature-settings: 'liga', 'kern';
   font-feature-settings: 'liga', 'kern';
+  text-rendering: optimizeLegibility;
 }
 
 // HTML5 elements
