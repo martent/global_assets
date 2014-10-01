@@ -38,7 +38,8 @@ module AssetsContainer
       Rails.root.join("assets", "icons").to_s,
       Rails.root.join("vendor", "malmo_shared_assets", "stylesheets").to_s,
       Rails.root.join("vendor", "malmo_shared_assets", "stylesheets", "shared").to_s,
-      Rails.root.join("vendor", "malmo_shared_assets", "stylesheets", "external").to_s
+      Rails.root.join("vendor", "malmo_shared_assets", "stylesheets", "external").to_s,
+      Rails.root.join("vendor", "malmo_shared_assets", "stylesheets", "internal").to_s
     ]
   end
 end
