@@ -12,7 +12,7 @@ body {
   -webkit-font-smoothing: subpixel-antialiased;
   -moz-font-feature-settings: 'liga', 'kern';
   -ms-font-feature-settings: 'liga', 'kern';
-  // -webkit-font-feature-settings: 'liga', 'kern'; // Bug in Chrome 35 removes space before links in text
+  -webkit-font-feature-settings: 'liga', 'kern'; // Bug in Chrome 35 removes space before links in text if this is enabled
   -o-font-feature-settings: 'liga', 'kern';
   font-feature-settings: 'liga', 'kern';
   text-rendering: optimizeLegibility;
