@@ -1,4 +1,4 @@
-<header id="malmo-masthead">
+<header id="malmo-masthead" role="banner" class="mf-v4">
   <div class="nav-logo"><a href="<%= APP_CONFIG['dashboard_base_url'] %>">Komin</a></div>
 
   <ul id="nav-triggers">
@@ -32,24 +32,28 @@
     </ul>
   </nav>
 
-  <div id="masthead-search" class="malmo-form">
+  <div id="masthead-search">
     <form action="<%= APP_CONFIG['site_search_url'] %>" id="masthead-search-intranet">
-      <div>
-        <input name="utf8" type="hidden" value="&#x2713;"/>
+      <div class="input-group input-group-sm">
         <label for="masthead-q-komin" class="add-on icon-file-text-alt icon-large"></label>
-        <input name="q" id="masthead-q-komin" class="text q" placeholder="Ett eller flera sökord" type="text" data-autocomplete-url="<%= APP_CONFIG['site_search_url'] %>/autocomplete"/>
-        <input class="btn" type="submit" value="Sök på Komin"/>
+        <input name="q" id="masthead-q-komin" autocapitalize="off" autocorrect="off" class="q form-control" placeholder="Ett eller flera sökord" type="text" data-autocomplete-url="<%= APP_CONFIG['site_search_url'] %>/autocomplete"/>
+        <span class="input-group-btn">
+          <input name="utf8" type="hidden" value="&#x2713;"/>
+          <input class="btn btn-default" type="submit" value="Sök på Komin"/>
+        </span>
       </div>
     </form>
 
     <span class="icon-search icon-large"></span>
 
     <form action="<%= APP_CONFIG['dashboard_base_url'] %>users/search" id="masthead-search-person">
-      <div class="input-append input-prepend">
-        <input name="utf8" type="hidden" value="&#x2713;"/>
+      <div class="input-group input-group-sm">
         <label for="masthead-q-employee" class="add-on icon-user icon-large"></label>
-        <input name="q" id="masthead-q-employee" class="text" placeholder="För- och/eller efternamn" type="text" data-autocomplete-url="<%= APP_CONFIG['dashboard_base_url'] %>users/suggest"/>
-        <input class="btn" type="submit" value="Sök person"/>
+        <input name="q" id="masthead-q-employee" autocapitalize="off" autocorrect="off" class="form-control" placeholder="För- och/eller efternamn" type="text" data-autocomplete-url="<%= APP_CONFIG['dashboard_base_url'] %>users/suggest"/>
+        <span class="input-group-btn">
+          <input name="utf8" type="hidden" value="&#x2713;"/>
+          <input class="btn btn-default" type="submit" value="Sök person"/>
+        </span>
       </div>
     </form>
   </div>
