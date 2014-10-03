@@ -1,7 +1,7 @@
-module AssetUtils
+class AssetUtils
 
   # Convert erb template to JS variable
-  def jsify(erb_file, js_var)
+  def self.jsify(erb_file, js_var)
     # Convert erb template to html
     erb = File.read(File.expand_path(erb_file))
     html = ERB.new(erb).result(binding)
