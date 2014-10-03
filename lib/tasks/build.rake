@@ -1,4 +1,4 @@
- namespace :build do
+namespace :build do
   desc "Convert masthead erb to a javascript string variable"
   task masthead: :environment do
     jsify("app/assets/content/#{APP_CONFIG['audience']}/masthead.html.erb", 'app/assets/javascripts/masthead_content.js', 'malmoMasthead')
