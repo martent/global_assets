@@ -1,8 +1,28 @@
 .contact-us {
   margin-top: 1em;
+
+  .vcard {
+    margin-bottom: 2em;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
   > div {
     font-size: emize(14);
     line-height: 1.7;
+
+    h2 {
+      font-size: emize(14, 14);
+    }
+
+    h3 {
+      font-size: emize(14, 14);
+      font-weight: normal;
+      font-style: italic;
+      margin: 1em 0 0;
+    }
   }
   .write-to-us-form {
     display: none;
