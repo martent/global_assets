@@ -18,27 +18,31 @@ jQuery ($) ->
   # Replace `data-map-selector` contents with the iframe and set the src from `data-poi`
   $("body").on "click", "[data-poi]", (event) ->
     event.preventDefault()
-
-    $iframe = $('<iframe scrolling="no" frameborder="0" src=""></iframe>')
     $selector = $($(@).attr("data-map-selector"))
+
     if $selector.length
-      # Set selector position to relative so we can place the close link on it
-      $selector.css("position", "relative") if $selector.css("position") is "static"
 
-      # Inject the iframe
-      $selector.show().html($iframe.attr("src", urlForInlineMap($(@).attr("data-poi"))))
+      # Map exists, remove it
+      if $selector.find("iframe").length
+        $(@).text("Visa på karta")
+        $selector.empty().hide()
 
-      # Place a close link on the map
-      $selector.prepend("<a href='#map' class='close-map m-icon-close'>Stäng</a>")
-        .find("a").click (event)->
-          event.preventDefault()
-          $selector.hide()
+      # Create map
+      else
+        $iframe = $('<iframe scrolling="no" frameborder="0" src=""></iframe>')
 
-      # After injection, scroll to the top of `data-scroll-to` or the $selector
-      if $(@).is("[data-scroll-to]")
-        $('html, body').animate
-          scrollTop: $($(@).attr("data-scroll-to")).offset().top - 45
-        , 100
+        $(@).text("Dölj karta")
+        # Set selector position to relative so we can place the close link on it
+        $selector.css("position", "relative") if $selector.css("position") is "static"
+
+        # Inject the iframe
+        $selector.show().html($iframe.attr("src", urlForInlineMap($(@).attr("data-poi"))))
+
+        # After injection, scroll to the top of `data-scroll-to` or the $selector
+        if $(@).is("[data-scroll-to]")
+          $('html, body').animate
+            scrollTop: $($(@).attr("data-scroll-to")).offset().top - 45
+          , 100
 
   # Show theme map
   $(".theme-map button").click ->
