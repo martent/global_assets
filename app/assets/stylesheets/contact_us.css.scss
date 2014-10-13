@@ -49,4 +49,23 @@
       }
     }
   }
+
+  // Select or search for district ("stadsområde")
+  .district-selector {
+    @include clearfix();
+    margin-bottom: 1em;
+    .form-group {
+      margin-bottom: 1em;
+      display: block;
+    }
+    select {
+      width: auto;
+    }
+    label {
+      display: none;
+    }
+    input[type=text] {
+      width: 30em;
+    }
+  }
 }
