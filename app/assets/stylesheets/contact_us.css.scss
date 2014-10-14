@@ -2,11 +2,11 @@
   margin-top: 1em;
 
   .vcard {
-    margin-bottom: 2em;
+    // margin-bottom: 2em;
 
-    &:last-child {
-      margin-bottom: 0;
-    }
+    // &:last-child {
+    //   margin-bottom: 0;
+    // }
   }
 
   > div {
@@ -50,21 +50,16 @@
     }
   }
 
-  // Select or search for district ("stadsområde")
-  .district-selector {
-    @include clearfix();
+  // Select or search for district
+  #choose-district {
     margin-bottom: 1em;
     .form-group {
       margin-bottom: 1em;
-      display: block;
     }
     select {
       width: auto;
     }
-    label {
-      display: none;
-    }
-    input[type=text] {
+    input {
       width: 30em;
     }
   }
