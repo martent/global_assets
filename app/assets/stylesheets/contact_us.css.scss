@@ -2,11 +2,15 @@
   margin-top: 1em;
 
   .vcard {
-    margin-bottom: 2.5em;
+    margin-bottom: 2em;
 
-    &:last-child {
+    &:last-of-type {
       margin-bottom: 0;
     }
+  }
+
+  &.multi-district .vcard {
+    margin-bottom: 0;
   }
 
   > div {
