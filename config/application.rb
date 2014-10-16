@@ -45,7 +45,5 @@ module AssetsContainer
   end
 end
 
-require 'asset_utils'
-
 AssetsContainer::Application.config.secret_token = 'Not_used_in_this_app_but_required_by_rails'
 AssetsContainer::Application.config.secret_key_base = 'Not_used_in_this_app_but_required_by_rails'
