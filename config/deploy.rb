@@ -51,6 +51,8 @@ end
 namespace :build do
   desc "Precompile assets locally"
   task :default do
+    run_locally("RAILS_ENV=#{rails_env} rake build:masthead")
+    run_locally("RAILS_ENV=#{rails_env} rake build:footer")
     run_locally("RAILS_ENV=#{rails_env} rake assets:clobber assets:precompile assets:remove_digests")
   end
 
