@@ -14,7 +14,13 @@ namespace :build do
   private
     def erb_to_jsfile(erb_file, js_file, js_var)
       # Convert erb template to html
-      js_var = AssetUtils.jsify(erb_file, js_var)
+      # Convert erb template to html
+      erb = File.read(File.expand_path(erb_file))
+      html = ERB.new(erb).result(binding)
+
+      # Make it a one line string and attach it to a js var
+      html = html.gsub(/^\s+/, '').gsub(/\n/, ' ').gsub(/\s+/, ' ').gsub(/'/, '"').strip
+      js_var = "var #{js_var} = '#{html}';"
 
       File.open(js_file, 'w') do |f|
         f.puts("// Don't edit this file. Auto generated from an erb template with rake")
