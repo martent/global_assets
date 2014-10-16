@@ -1,6 +1,6 @@
 # Used for content/masthead
 default: &default
-  sv_base_url: http://www.malmo.se/
+  sv_base_url: http://malmo.se/
   site_search_url: http://s1.malmo.se
   site_search_ac_url: //s1.malmo.se/search/autocomplete
   asset_host: //assets.malmo.se/external/v4/
