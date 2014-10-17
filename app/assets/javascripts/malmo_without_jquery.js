@@ -1,3 +1,4 @@
+//= require google_analytics
 //= require grunticon.loader
 //= require grunticons
 //= require utils
@@ -20,7 +21,7 @@
 //= require ios-orientationchange-fix
 //= require jquery.cycle2.min.js
 //= require jquery.cycle2.swipe.min.js
-//= require google_analytics
+//= require survey
 //= require legacy
 
 $(function() {
