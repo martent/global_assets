@@ -1,4 +1,4 @@
-//= // require google_analytics
+//= require google_analytics
 //= require grunticon.loader
 //= require grunticons
 //= require utils
