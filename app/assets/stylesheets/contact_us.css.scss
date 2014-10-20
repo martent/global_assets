@@ -1,11 +1,36 @@
 .contact-us {
   margin-top: 1em;
+
+  .vcard {
+    margin-bottom: 2em;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  &.multi-district .vcard {
+    margin-bottom: 0;
+  }
+
   > div {
     font-size: emize(14);
     line-height: 1.7;
+
+    h2 {
+      font-size: emize(14, 14);
+    }
+
+    h3 {
+      font-size: emize(14, 14);
+      font-weight: normal;
+      font-style: italic;
+      margin: 1em 0 0;
+    }
   }
   .write-to-us-form {
     display: none;
+    margin-bottom: 2em;
   }
   .show-on-map {
     background-size: 1em;
@@ -28,5 +53,27 @@
         height: 30em;
       }
     }
+  }
+
+  // Select or search for district
+  #choose-district {
+    margin-bottom: 1em;
+    .form-group {
+      margin-bottom: 1em;
+    }
+    select {
+      width: auto;
+    }
+    input {
+      width: 30em;
+      max-width: 100%;
+    }
+  }
+
+  #contact-us-form-template {
+    display: none;
+  }
+  .success, .error {
+    margin: 2em 0;
   }
 }
