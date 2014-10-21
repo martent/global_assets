@@ -102,13 +102,23 @@
     li {
       float: left;
     }
-    li.phone a span {
+    li a {
+      padding-left: .85em;
+      padding-right: .85em;
+    }
+    li a span {
       position: relative;
-      top: emize(-1, 13);
+      display: inline-block;
+      width: emize(14, 13);
+      height: emize(18, 13);
     }
     li.map a span {
-      position: relative;
       top: emize(-2, 13);
+      background-position: 25% 0%;
+    }
+    li.phone a span {
+      top: emize(-1, 13);
+      background-position: 25% 50%;
     }
   }
 
