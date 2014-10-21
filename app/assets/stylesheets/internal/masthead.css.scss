@@ -184,6 +184,9 @@
       line-height: 1;
       text-transform: uppercase;
     }
+    @media (min-resolution: 2dppx), (-webkit-min-device-pixel-ratio: 2) {
+      background-image: url("internal/logo-x2.png");
+    }
   }
 }
 
