@@ -1,17 +1,17 @@
 {
-  "name": "intranet-assets",
-  "version": "3.0.0",
+  "name": "global-assets",
+  "version": "4.0.0",
   "description": "Global assets for The City of Malmö",
   "repository": {
     "type": "git",
-    "url": "git://github.com/malmostad/intranet-assets.git"
+    "url": "git://github.com/malmostad/global-assets.git"
   },
   "author": "The City of Malmo",
   "license": "AGPL-3.0",
   "bugs": {
-    "url": "https://github.com/malmostad/intranet-assets/issues"
+    "url": "https://github.com/malmostad/global-assets/issues"
   },
-  "homepage": "https://github.com/malmostad/intranet-assets",
+  "homepage": "https://github.com/malmostad/global-assets",
   "dependencies": {
     "grunt": "~0.4.0",
     "grunt-grunticon": "~1.2.0"
