@@ -140,7 +140,7 @@
     @include box-sizing(border-box);
     top: emize(6);
     right: emize(10);
-    #masthead-search-intranet input.text {
+    #masthead-search-intranet input.q {
       max-height: 18px;
     }
     form {
@@ -182,14 +182,14 @@
     }
     #masthead-search-intranet {
       margin-bottom: .6em;
-      input.text {
+      input.q {
         max-height: none;
       }
     }
     .btn, .add-on {
       display: inline-block;
     }
-    input.text {
+    input.q {
       width: 25em;
     }
     .icon-search {
@@ -243,11 +243,6 @@
 
 // Switch to collapsed top nav
 @media (max-width: 61em) {
-  // Prevent scrolling of body when nav is open
-  body.nav-open {
-    height: 100%;
-    overflow: hidden;
-  }
 
   #malmo-masthead {
     min-width: 0;
@@ -267,13 +262,13 @@
         border: none;
       }
     }
-    #masthead-search #masthead-search-intranet input.text {
+    #masthead-search #masthead-search-intranet input.q {
       display: none;
     }
-    #masthead-search.expanded #masthead-search-intranet input.text {
+    #masthead-search.expanded #masthead-search-intranet input.q {
       display: inline;
     }
-    #masthead-search.expanded input.text {
+    #masthead-search.expanded input.q {
       max-width: 55%;
     }
     > nav {
