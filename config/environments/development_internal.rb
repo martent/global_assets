@@ -14,7 +14,11 @@ AssetsContainer::Application.configure do
 
   # Do not compress assets
   config.assets.compress = false
-
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  config.sass.line_comments = true
+  config.sass.cache = true
+  config.sass.read_cache = true
+  config.sass.style = :expanded
 end
