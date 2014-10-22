@@ -98,27 +98,32 @@
     border-right-color: #000;
   }
 
-  > nav#masthead-others > ul {
-    li {
-      float: left;
+  > nav#masthead-others {
+    > ul {
+      li {
+        float: left;
+      }
+      li a {
+        padding-left: .85em;
+        padding-right: .85em;
+      }
+      li a span {
+        position: relative;
+        display: inline-block;
+        width: emize(14, 13);
+        height: emize(18, 13);
+      }
+      li.map a span {
+        top: emize(-2, 13);
+        background-position: 25% 0%;
+      }
+      li.phone a span {
+        top: emize(-1, 13);
+        background-position: 25% 50%;
+      }
     }
-    li a {
-      padding-left: .85em;
-      padding-right: .85em;
-    }
-    li a span {
-      position: relative;
-      display: inline-block;
-      width: emize(14, 13);
-      height: emize(18, 13);
-    }
-    li.map a span {
-      top: emize(-2, 13);
-      background-position: 25% 0%;
-    }
-    li.phone a span {
-      top: emize(-1, 13);
-      background-position: 25% 50%;
+    @media (max-width: 74em) {
+      display: none;
     }
   }
 
@@ -142,7 +147,11 @@
       margin-bottom: 0;
     }
     input.form-control {
-      width: 14em;
+      @media (min-width: 70em) { width: 22em; }
+      @media (max-width: 70em) { width: 20em; }
+      @media (max-width: 68em) { width: 18em; }
+      @media (max-width: 66em) { width: 16em; }
+      @media (max-width: 64em) { width: 14em; }
     }
     #masthead-search-person,
     .btn, .add-on {
@@ -231,6 +240,160 @@
 .malmo-masthead-search #nav-search-trigger > a {
   border-left: 1px solid $masthead-color !important;
 }
+
+// Switch to collapsed top nav
+@media (max-width: 61em) {
+  // Prevent scrolling of body when nav is open
+  body.nav-open {
+    height: 100%;
+    overflow: hidden;
+  }
+
+  #malmo-masthead {
+    min-width: 0;
+    @include clearfix();
+    #masthead-search {
+      position: static;
+      float: left;
+      width: 100%;
+      overflow: hidden;
+      padding-left: .8em;
+      padding-right: .8em;
+      .icon-search {
+        display: none;
+      }
+      &.expanded {
+        @include radius(0);
+        border: none;
+      }
+    }
+    #masthead-search #masthead-search-intranet input.text {
+      display: none;
+    }
+    #masthead-search.expanded #masthead-search-intranet input.text {
+      display: inline;
+    }
+    #masthead-search.expanded input.text {
+      max-width: 55%;
+    }
+    > nav {
+      position: fixed;
+      top: emize(41);
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: none;
+      overflow: hidden;
+      background: rgba(255, 255, 255, .7);
+      ul {
+        overflow: auto;
+        position: static;
+        height: 100%;
+        li {
+          float: none;
+          width: 100%;
+          a,
+          a:hover,
+          a:focus,
+          &.open > a:hover,
+          &.open > a:focus {
+            height: auto;
+            padding: emize(18) emize(13);
+            background-color: $narrow-nav-background !important;
+            border-width: 1px 0 0;
+            border-top-color: $narrow-nav-border-color;
+            color: $narrow-nav-color;
+            @include radius(0);
+            .icon-caret-down {
+              display: none;
+            }
+          }
+        }
+        > li#nav-more ul.dropdown-menu {
+          margin-bottom: 2em;
+          @include box-shadow(2px 2px 3px rgba(0, 0, 0, .2));
+        }
+      }
+      ul.dropdown-menu li {
+        a, a:hover, a:focus {
+          line-height: emize(15, 13);
+        }
+      }
+    }
+    > nav.expanded {
+      display: block;
+    }
+    #nav-triggers {
+      display: block;
+    }
+    #nav-menu-trigger {
+      margin-right: -1px;
+      a {
+        margin-right: 0;
+        span {
+          padding-left: .3em;
+        }
+      }
+    }
+    #nav-search-trigger a {
+      margin-right: 0;
+      span {
+        margin-left: 0;
+      }
+    }
+
+    #nav-my-department, #nav-my-workingfield, #nav-more {
+      .dropdown-toggle {
+        display: none;
+        cursor: default;
+        background: $narrow-nav-background;
+      }
+      ul.dropdown-menu {
+        position: static;
+        display: block;
+        @include box-shadow(none);
+        @include radius(0);
+        border: none;
+        width: 100%;
+        &:after, &:before {
+          content: none;
+        }
+
+        > li {
+          > a {
+            background: $narrow-nav-background;
+            @include radius(0);
+            padding-top: emize(18);
+            padding-bottom: emize(18);
+            border-top-width: 1px;
+            border-top-color: $narrow-nav-border-color;
+            border-top-style: solid;
+          }
+          > a:hover,
+          > a:focus {
+            background: $narrow-nav-background-higlight;
+          }
+        }
+      }
+    }
+  }
+
+  // Add on of the class selectors to the body
+  // to get an active nav item
+  .malmo-masthead-dashboard #nav-dashboard,
+  .malmo-masthead-my-department #nav-my-department,
+  .malmo-masthead-my-workingfield #nav-my-workingfield,
+  .malmo-masthead-our-organization #nav-our-organization,
+  .malmo-masthead-hrutan #nav-hrutan,
+  .malmo-masthead-more #nav-more {
+    a, a:hover {
+      border-top-color: $narrow-nav-border-color;
+      background: $narrow-nav-background-higlight;
+      background: $narrow-nav-background-higlight;
+    }
+  }
+}
+
 
 .service-title, .app-title {
   padding: .5em .9em;
