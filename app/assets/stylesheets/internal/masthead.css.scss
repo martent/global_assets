@@ -309,7 +309,7 @@
             padding: emize(18) emize(14);
             background-color: $narrow-nav-background !important;
             border-width: 1px 0 0;
-            border-top-color: $narrow-nav-border-color;
+            border-top-color: $border-color;
             color: #000 !important;
             @include radius(0);
             .icon-caret-down {
@@ -373,30 +373,11 @@
             padding-top: emize(18);
             padding-bottom: emize(18);
             border-top-width: 1px;
-            border-top-color: $narrow-nav-border-color;
+            border-top-color: $border-color;
             border-top-style: solid;
-          }
-          > a:hover,
-          > a:focus {
-            background: $narrow-nav-background-higlight;
           }
         }
       }
-    }
-  }
-
-  // Add on of the class selectors to the body
-  // to get an active nav item
-  .malmo-masthead-dashboard #nav-dashboard,
-  .malmo-masthead-my-department #nav-my-department,
-  .malmo-masthead-my-workingfield #nav-my-workingfield,
-  .malmo-masthead-our-organization #nav-our-organization,
-  .malmo-masthead-hrutan #nav-hrutan,
-  .malmo-masthead-more #nav-more {
-    a, a:hover {
-      border-top-color: $narrow-nav-border-color;
-      background: $narrow-nav-background-higlight;
-      background: $narrow-nav-background-higlight;
     }
   }
 }
