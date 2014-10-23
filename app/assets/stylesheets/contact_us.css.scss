@@ -7,6 +7,10 @@
     &:last-of-type {
       margin-bottom: 0;
     }
+    p {
+      font-size: emize(14, 14);
+      line-height: 1.7;
+    }
   }
 
   &.multi-district .vcard {
@@ -19,6 +23,7 @@
 
     h2 {
       font-size: emize(14, 14);
+      margin-bottom: .3em;
     }
 
     h3 {
