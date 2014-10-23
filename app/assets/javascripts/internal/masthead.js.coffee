@@ -99,16 +99,9 @@ jQuery ($) ->
   $mastheadSearch.focusout ->
     $(document).off('keyup.searchForm')
 
-  $('#masthead-search-intranet input.text').focus ->
-    showSearch()
-
-  $('#masthead-search .icon-search').click ->
-    $('#masthead-search-intranet input.text').focus()
+  $('#masthead-q-komin, #masthead-q-employee').focus ->
     showSearch()
 
   $("#nav-search-trigger a").click (event) ->
     event.preventDefault()
     if $("#masthead-search-intranet input.text").is(":hidden") then showSearch() else hideSearch()
-
-  # https://github.com/ftlabs/fastclick
-  new FastClick $('#nav-search-trigger')[0]
