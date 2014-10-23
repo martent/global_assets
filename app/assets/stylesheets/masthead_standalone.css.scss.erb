@@ -1,13 +1,13 @@
 // Used for web apps that only includes the masthead and footer.
 // Will only style elements inside the #malmo-masthead and #malmo-footer
-@import 'malmo_<%= APP_CONFIG['audience'] %>';
+@import 'malmo_<%= ENV["AUDIENCE"] %>';
 
 @import 'bootstrap_custom';
 @import 'jquery-ui.helpers.min';
 @import 'autocomplete';
 @import 'sitesearch';
 
-@import '<%= APP_CONFIG['audience'] %>/masthead';
+@import '<%= ENV["AUDIENCE"] %>/masthead';
 #malmo-masthead {
   font-size: 16px;
 }

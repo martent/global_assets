@@ -1,14 +1,14 @@
 namespace :build do
   desc "Convert masthead erb to a javascript string variable"
   task masthead: :environment do
-    erb_to_jsfile("app/assets/content/#{APP_CONFIG['audience']}/masthead.html.erb", 'app/assets/javascripts/masthead_content.js', 'malmoMasthead')
-    puts "Generated masthead environment \033[32;1m#{Rails.env}\033[0m and audience \033[32;1m#{APP_CONFIG['audience']}\033[0m"
+    erb_to_jsfile("app/assets/content/#{ENV["AUDIENCE"]}/masthead.html.erb", 'app/assets/javascripts/masthead_content.js', 'malmoMasthead')
+    puts "Generated masthead environment \033[32;1m#{Rails.env}\033[0m and audience \033[32;1m#{ENV["AUDIENCE"]}\033[0m"
   end
 
   desc "Convert footer erb to a javascript string variable"
   task footer: :environment do
-    erb_to_jsfile("app/assets/content/#{APP_CONFIG['audience']}/footer.html.erb", 'app/assets/javascripts/footer_content.js', 'malmoFooter')
-    puts "Generated footer for environment \033[32;1m#{Rails.env}\033[0m and audience \033[32;1m#{APP_CONFIG['audience']}\033[0m"
+    erb_to_jsfile("app/assets/content/#{ENV["AUDIENCE"]}/footer.html.erb", 'app/assets/javascripts/footer_content.js', 'malmoFooter')
+    puts "Generated footer for environment \033[32;1m#{Rails.env}\033[0m and audience \033[32;1m#{ENV["AUDIENCE"]}\033[0m"
   end
 
   private

@@ -1,11 +1,11 @@
-@import 'malmo_<%= APP_CONFIG['audience'] %>';
+@import 'malmo_<%= ENV["AUDIENCE"] %>';
 @import 'bootstrap_custom';
 @import 'jquery-ui.helpers.min';
 @import 'autocomplete';
 @import 'elements';
 @import 'forms';
 @import 'fonts';
-@import '<%= APP_CONFIG['audience'] %>/masthead';
+@import '<%= ENV["AUDIENCE"] %>/masthead';
 @import 'breadcrumbs';
 @import 'basic_aside';
 @import 'content_nav';

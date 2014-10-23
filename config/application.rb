@@ -7,6 +7,8 @@ if defined?(Bundler)
   Bundler.require(:default, Rails.env)
 end
 
+ENV["AUDIENCE"] ||= "external"
+
 module AssetsContainer
   class Application < Rails::Application
     config.time_zone = 'Stockholm'
@@ -35,8 +37,9 @@ module AssetsContainer
       icons.fallback.css
       portwise.css
     )
+
     config.assets.paths += [
-      Rails.root.join("assets", "icons").to_s,
+      Rails.root.join("app", "assets", "javascripts", ENV["AUDIENCE"]).to_s,
       Rails.root.join("vendor", "malmo_shared_assets", "stylesheets").to_s,
       Rails.root.join("vendor", "malmo_shared_assets", "stylesheets", "shared").to_s,
       Rails.root.join("vendor", "malmo_shared_assets", "stylesheets", "external").to_s,

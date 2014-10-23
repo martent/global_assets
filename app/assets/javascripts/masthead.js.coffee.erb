@@ -1,2 +1,0 @@
-<% # The assets pipeline's "//= require" directives are executed before ERB so we need to include with plain Ruby %>
-<%= File.open(File.join(Rails.root, "app/assets/javascripts/#{APP_CONFIG['audience']}/masthead.js.coffee")).read %>
