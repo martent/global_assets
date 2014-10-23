@@ -18,6 +18,7 @@ module.exports = (grunt) ->
            "chevron-right": [".breadcrumbs li"]
            "caret-down-0": [".box-menu .dropdown-toggle"]
            "todo-0": [".act-now a::before"]
+           "search": ["#masthead-search::before"]
           cssbasepath: '/'
           # defaultWidth: '300px',
           # defaultHeight: '200px',
