@@ -76,7 +76,7 @@ jQuery ($) ->
 
       # Attach survey markup
       $survey = $(markup)
-      $('body > div.wrapper').first().prepend $survey
+      $('body div.wrapper').first().prepend $survey
 
       # User want to take the survey
       $("#survey-action-ok").on 'click', (event) ->
