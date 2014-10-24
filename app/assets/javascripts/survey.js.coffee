@@ -57,7 +57,7 @@ jQuery ($) ->
 
       # Collect data from survey form
       collectFormData = (formValues) ->
-        answered_before = if userTracking.answered then "No" else $.fn.datepicker.DPGlobal.formatDate(new Date(userTracking.answered), "yyyy-mm-dd", "en")
+        answered_before = if userTracking.answered then $.fn.datepicker.DPGlobal.formatDate(new Date(userTracking.answered), "yyyy-mm-dd", "en") else "No"
 
         # Add aditional data
         formValues.push
