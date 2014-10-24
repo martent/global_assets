@@ -1,2 +1,1 @@
-# ERB.new(erb).result(binding)
-APP_CONFIG = YAML.load_file("#{Rails.root.to_s}/config/app_config.yml")[Rails.env]
+APP_CONFIG = YAML.load(File.read File.join(Rails.root, "/config/application_#{ENV['AUDIENCE']}.yml"))[Rails.env]
