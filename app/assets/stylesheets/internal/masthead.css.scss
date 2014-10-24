@@ -155,7 +155,7 @@
     @include box-sizing(border-box);
     top: emize(6);
     right: emize(10);
-    &::before {
+    .m-icon-search {
       display: block;
       position: absolute;
       background-position: top right;
@@ -163,7 +163,6 @@
       height: 1.6em;
       top: .25em;
       right: .5em;
-      content: "";
     }
     #masthead-search-intranet input.q {
       max-height: 2em;
@@ -193,7 +192,7 @@
   }
   // Search box, expanded
   #masthead-search.expanded {
-    &::before {
+    .m-icon-search {
       display: none;
     }
     position: absolute;

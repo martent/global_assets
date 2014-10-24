@@ -54,7 +54,6 @@
 
 .m-icon-search-0 { background-image: url('png/search-0.png'); background-repeat: no-repeat; }
 
-#masthead-search::before,
 .m-icon-search { background-image: url('png/search.png'); background-repeat: no-repeat; }
 
 .m-icon-spinner { background-image: url('png/spinner.png'); background-repeat: no-repeat; }

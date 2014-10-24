@@ -34,9 +34,10 @@
 
   <div id="masthead-search">
     <form action="<%= APP_CONFIG['site_search_url'] %>" id="masthead-search-intranet">
+      <span class="m-icon-search"></span>
       <div class="input-append input-prepend">
         <label for="masthead-q-komin" class="add-on icon-file-text-alt icon-large"></label>
-        <input name="q" id="masthead-q-komin" autocapitalize="off" autocorrect="off" class="q form-control" placeholder="Ett eller flera sökord" type="text" data-autocomplete-url="<%= APP_CONFIG['site_search_url'] %>/autocomplete"/>
+        <input name="q" id="masthead-q-komin" class="q form-control" autocapitalize="off" autocorrect="off" placeholder="Ett eller flera sökord" type="text" data-autocomplete-url="<%= APP_CONFIG['site_search_url'] %>/autocomplete"/>
         <span class="input-group-btn">
           <input name="utf8" type="hidden" value="&#x2713;"/>
           <input class="btn btn-default" type="submit" value="Sök på Komin"/>

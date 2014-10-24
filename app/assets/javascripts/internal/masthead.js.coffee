@@ -99,8 +99,11 @@ jQuery ($) ->
   $mastheadSearch.focusout ->
     $(document).off('keyup.searchForm')
 
-  $('#masthead-q-komin, #masthead-q-employee').focus ->
+  $('#masthead-q-komin').focus ->
     showSearch()
+
+  $mastheadSearch.find('.m-icon-search').click ->
+    $('#masthead-q-komin').focus()
 
   $("#nav-search-trigger a").click (event) ->
     event.preventDefault()
