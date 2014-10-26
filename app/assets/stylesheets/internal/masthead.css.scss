@@ -215,6 +215,7 @@ $collapse-at: 61em;
 
     label {
       display: table-cell;
+      background-position: 50% 46%;
     }
 
 
@@ -235,11 +236,14 @@ $collapse-at: 61em;
         max-height: none;
       }
     }
-    .btn, .input-group {
-      display: inline-block;
+    .input-group {
+      display: table;
+      .btn {
+        display: inline-block;
+      }
     }
     input.q {
-      // width: 25em;
+      width: 25em;
     }
     .icon-search {
       display: none;
