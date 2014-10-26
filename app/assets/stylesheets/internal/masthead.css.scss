@@ -158,9 +158,10 @@
     .m-icon-search {
       display: block;
       position: absolute;
+      z-index: 5;
       background-position: top right;
-      width: 1.6em;
-      height: 1.6em;
+      width: 11.6em;
+      height: 11.6em;
       top: .25em;
       right: .5em;
     }
@@ -192,6 +193,9 @@
   }
   // Search box, expanded
   #masthead-search.expanded {
+    #masthead-q-komin {
+      width: 100%;
+    }
     .m-icon-search {
       display: none;
     }
