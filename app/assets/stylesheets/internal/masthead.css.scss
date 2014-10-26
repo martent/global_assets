@@ -209,13 +209,18 @@ $collapse-at: 61em;
     border: $border;
     border-width: 0 0 1px 1px;
     background: $background-light;
-    padding: 1.2em;
+    padding: 1.2em 1.2em 1.8em;
     @include radius(0 0 0 3px);
     @include box-shadow(2px 2px 3px rgba(0, 0, 0, .2));
 
     label {
       display: table-cell;
-      background-position: 50% 46%;
+      &.m-icon-user {
+        background-position: 50% 46%;
+      }
+      &.m-icon-file-text-o {
+        background-position: 68% 46%;
+      }
     }
 
 
