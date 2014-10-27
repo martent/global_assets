@@ -14,6 +14,7 @@
 //= require masthead_content
 //= require masthead
 //= require sitesearch
+//= require employee_search
 //= require footer_content
 //= require footer
 //= require share

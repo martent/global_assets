@@ -4,6 +4,7 @@ default: &default
   site_search_ac_url: http://s1.malmo.se/search/autocomplete
   asset_host: //assets.malmo.se/internal/v4/
   ua_account: 'UA-1659147-1'
+  dashboard_base_url: "https://webapps06.malmo.se/dashboard/"
 
 development: &development
   <<: *default
