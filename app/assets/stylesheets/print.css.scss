@@ -1,4 +1,4 @@
-@media print {
+@media all {
   body {
     font-size: 80%;
     padding: 0 5em 1em !important;
@@ -11,6 +11,8 @@
     form, input, select, textarea, button, label,
     .dropdown, .toggle-instructions,
     .show-on-map, .write-to-us,
+    .more,
+    section.movies,
     .announcement {
       display: none !important;
     }
