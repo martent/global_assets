@@ -220,7 +220,7 @@ jQuery ($) ->
             <div class="controls">
               <select id="syfte" name="syfte" class="form-control">
                 <option></option>
-                <option value="enkat-tjanst">Använda en tjänst, t.ex.</option>
+                <option value="enkat-tjanst">Använda en tjänst, t.ex. hämta blankett, boka loppis, låna bok</option>
                 <option value="enkat-kontakt">Hitta kontaktuppgifter</option>
                 <option value="enkat-jobb">Hitta lediga jobb</option>
                 <option value="enkat-verksamhet">Läsa information om viss verksamhet</option>
