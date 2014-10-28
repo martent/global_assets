@@ -18,6 +18,8 @@
 
 .m-icon-feed { background-image: url('png/feed.png'); background-repeat: no-repeat; }
 
+.m-icon-file-text-o { background-image: url('png/file-text-o.png'); background-repeat: no-repeat; }
+
 .m-icon-googleplus { background-image: url('png/googleplus.png'); background-repeat: no-repeat; }
 
 .m-icon-link { background-image: url('png/link.png'); background-repeat: no-repeat; }
@@ -26,9 +28,17 @@
 
 .m-icon-location { background-image: url('png/location.png'); background-repeat: no-repeat; }
 
+.m-icon-map-marker-0 { background-image: url('png/map-marker-0.png'); background-repeat: no-repeat; }
+
+.m-icon-map-marker { background-image: url('png/map-marker.png'); background-repeat: no-repeat; }
+
 .m-icon-menu-0 { background-image: url('png/menu-0.png'); background-repeat: no-repeat; }
 
 .m-icon-menu { background-image: url('png/menu.png'); background-repeat: no-repeat; }
+
+.m-icon-phone-big-0 { background-image: url('png/phone-big-0.png'); background-repeat: no-repeat; }
+
+.m-icon-phone-big { background-image: url('png/phone-big.png'); background-repeat: no-repeat; }
 
 .m-icon-phone { background-image: url('png/phone.png'); background-repeat: no-repeat; }
 
