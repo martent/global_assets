@@ -10,7 +10,8 @@
     nav, menu,
     form, input, select, textarea, button, label,
     .dropdown, .toggle-instructions,
-    .show-on-map, .announcement {
+    .show-on-map, .write-to-us,
+    .announcement {
       display: none !important;
     }
     aside {
@@ -29,5 +30,11 @@
         margin-left: 0;
       }
     }
+  }
+  body.development::after,
+  body.test::after,
+  body.staging::after,
+  body.prototype::after {
+    display: none;
   }
 }
