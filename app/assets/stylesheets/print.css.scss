@@ -1,12 +1,31 @@
 @media print {
   body {
     font-size: 80%;
-    padding: 0 5em 1em !important;
+    padding: 0 6em 1em !important;
+
+    article, aside {
+      clear: both;
+      width: 100% !important;
+      margin: 0 !important;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      page-break-after: avoid;
+      break-after: avoid;
+    }
+
     a {
       color: #000 !important;
     }
-    > footer, > header, aside,
-    .dropdown, .toggle-instructions {
+
+    > footer, > header,
+    nav, menu,
+    form, input, select, textarea, button, label,
+    .dropdown, .toggle-instructions,
+    .show-on-map, .write-to-us,
+    .more,
+    section.movies,
+    .announcement {
       display: none !important;
     }
     .box {
@@ -21,5 +40,12 @@
         margin-left: 0;
       }
     }
+  }
+
+  body.development::after,
+  body.test::after,
+  body.staging::after,
+  body.prototype::after {
+    display: none;
   }
 }
