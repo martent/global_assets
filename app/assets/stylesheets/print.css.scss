@@ -5,9 +5,17 @@
     a {
       color: #000 !important;
     }
-    > footer, > header, aside,
-    .dropdown, .toggle-instructions {
+
+    > footer, > header,
+    nav, menu,
+    form, input, select, textarea, button, label,
+    .dropdown, .toggle-instructions,
+    .show-on-map {
       display: none !important;
+    }
+    aside {
+      clear: both;
+      width: 100%;
     }
     .box {
       border: none;
