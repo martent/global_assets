@@ -1,9 +1,8 @@
 # The Capistrano tasks will use your **working copy**, compile the assets and deploy them to the server_address
 # Execute one of the following to deploy into staging or production:
-#   $ bundle exec cap staging deploy
-#   $ bundle exec cap production deploy
+#   $ AUDIENCE=[internal|external] bundle exec cap [staging|production] deploy
 # Rollback one step:
-#   $ bundle exec cap [staging|production] deploy:rollback
+#   $ AUDIENCE=[internal|external] bundle exec cap [staging|production] deploy:rollback
 
 require 'capistrano/ext/multistage'
 require 'fileutils'
@@ -12,13 +11,15 @@ set :server_address, 'assets.malmo.se'
 server server_address, :web
 set :use_sudo, false
 
-set :stages, %w(staging production staging_internal production_internal)
+set :stages, %w(staging production)
+set :audiences, %w(external internal)
+set :audience, ENV["AUDIENCE"]
 
 set :application, "assets"
 
 set :deploy_via, :copy # Use local copy, be sure to update the stuff you want to deploy
 set :copy_exclude, ["log/*", "**/.git*", "tmp/*", "doc", "bootstrap", "**/.DS_Store",
-  "**/*.example", "config/database.yml*", "config/deploy.yml*", "config/app_config.yml*",
+  "**/*.example", "config/database.yml*", "config/app_config.yml*",
   ".bundle", ".ruby-version", ".gitignore", ".rspec", ".bowerrc", "package.json"]
 
 default_run_options[:pty] = true
@@ -40,7 +41,7 @@ namespace :deploy do
   end
 
   task :continue do
-    if ENV["AUDIENCE"].nil?
+    if audience.nil? || !audiences.include?(audience)
       puts "\033[1;31mYou must set to AUDIENCE=internal or AUDIENCE=external in your command, e.g.:\033[0m"
       puts "  \033[0;32m$ AUDIENCE=internal bundle exec cap staging deploy\033[0m"
       Kernel.exit(1)
@@ -56,9 +57,9 @@ end
 namespace :build do
   desc "Precompile assets locally"
   task :default do
-    run_locally("RAILS_ENV=#{rails_env} rake build:masthead")
-    run_locally("RAILS_ENV=#{rails_env} rake build:footer")
-    run_locally("RAILS_ENV=#{rails_env} rake assets:clobber assets:precompile assets:remove_digests")
+    run_locally("AUDIENCE=#{audience} RAILS_ENV=#{rails_env} rake build:masthead")
+    run_locally("AUDIENCE=#{audience} RAILS_ENV=#{rails_env} rake build:footer")
+    run_locally("AUDIENCE=#{audience} RAILS_ENV=#{rails_env} rake assets:clobber assets:precompile assets:remove_digests")
   end
 
   desc "Remove locally compiled assets"
