@@ -30,6 +30,16 @@ $bootstrap-sass-asset-helper: true; // and restore it
 
 // Limit the scope so third-party apps can have their own form styling
 .mf-v4 {
+  // Taken from 'bootstrap/normalize' to fix input field and button height in Firefox
+  button::-moz-focus-inner,
+  input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+  }
+  input {
+    line-height: normal;
+  }
+
   @import 'bootstrap/forms';
   @import 'bootstrap/buttons';
   @import 'bootstrap/button-groups';
