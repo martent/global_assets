@@ -139,7 +139,7 @@ $collapse-at: 61em;
         background-position: 25% 50%;
       }
     }
-    @media (max-width: 74em) {
+    @media (max-width: 72em) {
       display: none;
     }
   }
@@ -167,9 +167,6 @@ $collapse-at: 61em;
       top: .25em;
       right: .5em;
     }
-    #masthead-search-intranet input.q {
-      max-height: 2em;
-    }
 
     #masthead-search-person,
     .btn,
@@ -182,11 +179,11 @@ $collapse-at: 61em;
     }
     #masthead-q-komin {
       @include radius(3px);
-      @media (min-width: 70em) { width: 22em; }
+      @media (min-width: 70em) { width: 23em; }
       @media (max-width: 70em) { width: 20em; }
-      @media (max-width: 68em) { width: 18em; }
-      @media (max-width: 66em) { width: 16em; }
-      @media (max-width: 64em) { width: 13em; }
+      @media (max-width: 68em) { width: 19em; }
+      @media (max-width: 66em) { width: 17em; }
+      @media (max-width: 64em) { width: 14em; }
     }
     .icon-search {
       position: absolute;
