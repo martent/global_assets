@@ -1,7 +1,19 @@
 @media print {
   body {
     font-size: 80%;
-    padding: 0 5em 1em !important;
+    padding: 0 6em 1em !important;
+
+    article, aside {
+      clear: both;
+      width: 100% !important;
+      margin: 0 !important;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      page-break-after: avoid;
+      break-after: avoid;
+    }
+
     a {
       color: #000 !important;
     }
@@ -16,10 +28,6 @@
     .announcement {
       display: none !important;
     }
-    aside {
-      clear: both;
-      width: 100%;
-    }
     .box {
       border: none;
       .box-title {
@@ -33,6 +41,7 @@
       }
     }
   }
+
   body.development::after,
   body.test::after,
   body.staging::after,
