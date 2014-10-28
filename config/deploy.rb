@@ -40,6 +40,11 @@ namespace :deploy do
   end
 
   task :continue do
+    if ENV["AUDIENCE"].nil?
+      puts "\033[1;31mYou must set to AUDIENCE=internal or AUDIENCE=external in your command, e.g.:\033[0m"
+      puts "  \033[0;32m$ AUDIENCE=internal bundle exec cap staging deploy\033[0m"
+      Kernel.exit(1)
+    end
     puts "This will use your **working copy**, compile the assets and deploy them to #{server_address} #{releases_path}/#{release_name}"
     continue = Capistrano::CLI.ui.ask "Do you want to continue [y/n]: "
     if continue.downcase != 'y' && continue.downcase != 'yes'
