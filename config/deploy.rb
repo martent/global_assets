@@ -46,8 +46,13 @@ namespace :deploy do
       puts "  \033[0;32m$ AUDIENCE=internal bundle exec cap staging deploy\033[0m"
       Kernel.exit(1)
     end
+    puts ""
+    puts "Audience:    \033[0;32m#{audience}\033[0m"
+    puts "Environment: \033[0;32m#{rails_env}\033[0m"
+    puts ""
     puts "This will use your **working copy**, compile the assets and deploy them to:"
     puts "  \033[0;32m#{server_address} #{releases_path}/#{release_name}\033[0m"
+    puts ""
     continue = Capistrano::CLI.ui.ask "Do you want to continue [y/n]: "
     if continue.downcase != 'y' && continue.downcase != 'yes'
       Kernel.exit(1)
