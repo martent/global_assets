@@ -8,9 +8,7 @@
 require 'capistrano/ext/multistage'
 require 'fileutils'
 
-config = YAML::load_file(File.join(File.dirname(File.expand_path(__FILE__)), 'deploy.yml'))
-
-set :server_address, config['server_address']
+set :server_address, "assets.malmo.se"
 server server_address, :web
 set :use_sudo, false
 
