@@ -3,8 +3,11 @@
     font-size: 80%;
     padding: 0 6em 1em !important;
 
-    article, aside {
-      clear: both;
+    article,
+    aside,
+    aside.contact-us {
+      clear: both ;
+      float: none !important;
       width: 100% !important;
       margin: 0 !important;
     }
@@ -18,16 +21,22 @@
       color: #000 !important;
     }
 
-    > footer, > header,
-    nav, menu,
+    footer.bigfoot,
+    > footer,
+    > header,
+    nav,
+    menu,
     form, input, select, textarea, button, label,
-    .dropdown, .toggle-instructions,
-    .show-on-map, .write-to-us,
+    .dropdown,
+    .toggle-instructions,
+    .show-on-map,
+    .write-to-us,
     .more,
     section.movies,
     .announcement {
       display: none !important;
     }
+
     .box {
       border: none;
       .box-title {
