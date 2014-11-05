@@ -7,19 +7,19 @@ jQuery ($) ->
         $(self).val($(self).attr('placeholder'))
 
     # Bind events
-    $('.mf-v4 input[placeholder]').focus ->
+    $('.mf-v4').on "focus", "input[placeholder]", ->
       if $(@).val() is $(@).attr('placeholder')
         $(@).val('')
         $(@).removeClass('placeholder')
-    .blur ->
+    $('.mf-v4').on "blur", "input[placeholder]", ->
       setPlaceholder(this)
 
     # Set on load
-    $('input[placeholder]').each ->
+    $('.mf-v4 input[placeholder]').each ->
       setPlaceholder(@)
 
     # Clear before submit
-    $('input[placeholder]').parents('form').submit ->
+    $('.mf-v4 input[placeholder]').parents('form').submit ->
       $(@).find('input[placeholder]').each ->
         if $(@).val() is $(@).attr('placeholder')
           $(@).val('')
