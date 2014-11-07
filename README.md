@@ -46,16 +46,13 @@ You might need to map a domain name to your local host like `www.local.malmo.se`
 Use the local views in the asset application for the visual part of the development. You can also point another locally installed web application your started asset server.
 
 ## Build and Deployment
-Capistrano is used for build and deployment to the server. Sass and Javascript files are concatenated and minified. Run the deployment script by including the environment name in the command:
-
-To change the Capistrano deployment configuration:
-
-1. Copy `config/deploy.yml.example` to `config/deploy.yml` and change the settings.
-2. Edit `config/deploy.rb` and the environment files in the `config/deploy/` directory if necessary.
+Capistrano is used for build and deployment to the server from your local copy. Include the `AUDIENCE=internal|external` in the deployment command. `internal` is for the intranet version and `external` for public web sites.
 
 ```
-$ cap staging deploy
-$ cap production deploy
+$ AUDIENCE=internal bundle exec cap staging deploy
+$ AUDIENCE=internal bundle exec cap production deploy
+$ AUDIENCE=external bundle exec cap staging deploy
+$ AUDIENCE=external bundle exec cap production deploy
 ```
 
 The compression levels for CSS and Javascript files are configured in `config/environments/` for development, staging and production.
@@ -105,21 +102,21 @@ The `columns()` mixin from [`shared_assets`](https://github.com/malmostad/shared
 ### Coffeescript
 Use Coffeescript for JavaScript development and organize it in smaller files that will be imported in the malmo.js file using the Sprockets syntax. The files are automatically served as individual files in the development application for easy debugging and concatenated and compressed in the build phase.
 
-### The Masthead
+### The Masthead and the Bigfoot
 The common masthead that must be on every application page is found in `app/assets/content/masthead.html.erb`. The code is transform to a Javascript string during the Capistrano build process for fast injection on every page or view. To transform and display it during development, run the following task:
 
 ```shell
-$ rake build:masthead
+$ AUDIENCE=external bundle exec rake build:masthead
+$ AUDIENCE=external bundle exec rake build:footer
+$ AUDIENCE=internal bundle exec rake build:masthead
+$ AUDIENCE=internal bundle exec rake build:footer
 ```
 
 ### Icons
-Use the icon font for icons, not png images or sprites.
+Use SVGs icons, not png images or sprites.
 
 ### Gradients, Rounded Corners and Shadows
 For gradients, rounded corners and related stuff, use CSS3. Use solid background colors as a fallback. Use the Sass mixins for vendor prefixes to keep the code clean.
-
-### Build and Deployment
-See the repository’s [readme file](../blob/master/README.md).
 
 ### Frameworks and Third Party Code
 Third party code resides in `vendor/assets`. The code is included in the global stylesheet and Javascript file in the development environment as well as in the build process.
