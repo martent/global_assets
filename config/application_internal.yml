@@ -1,7 +1,7 @@
 default: &default
-  sv_base_url: http://malmo.se/
-  site_search_url: http://s1.malmo.se
-  site_search_ac_url: http://s1.malmo.se/search/autocomplete
+  sv_base_url: https://komin.malmo.se/
+  site_search_url: http://188.226.144.234
+  site_search_ac_url: http://188.226.144.234/search/autocomplete
   asset_host: //assets.malmo.se/internal/v4/
   ua_account: 'UA-1659147-1'
   dashboard_base_url: "https://webapps06.malmo.se/dashboard/"
@@ -12,7 +12,6 @@ development: &development
   site_search_ac_url: http://www.local.malmo.se:3000/search/autocomplete
   asset_host: http://www.local.malmo.se:3001/assets/
   ua_account: 'UA-19475064-1'
-  dashboard_base_url: "http://webapps06.malmo.se/dashboard/"
 
 staging:
   <<: *default
