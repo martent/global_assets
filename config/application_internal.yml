@@ -12,6 +12,7 @@ development: &development
   site_search_ac_url: http://www.local.malmo.se:3000/search/autocomplete
   asset_host: http://www.local.malmo.se:3001/assets/
   ua_account: 'UA-19475064-1'
+  dashboard_base_url: "http://www.local.malmo.se:3000/"
 
 staging:
   <<: *default
