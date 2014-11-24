@@ -5,4 +5,5 @@ jQuery ($) ->
   if $toggleInstructions.length
     $toggleInstructions.click ->
       $(@).closest('.box').find('.box-instructions').toggle()
+      $(@).closest('.dropdown').removeClass("open")
       return false
