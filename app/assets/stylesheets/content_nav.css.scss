@@ -23,8 +23,7 @@ nav.content {
     color: #000;
     margin: 0;
   }
-
-  li:hover,
+  li a:hover,
   li.current a,
   li a.current {
     background: $background-light;
