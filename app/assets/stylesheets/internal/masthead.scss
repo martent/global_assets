@@ -7,9 +7,8 @@ $collapse-at: 61em;
   right: 0;
   z-index: 100;
   background-color: $masthead-background;
-  @include box-shadow(0 2px 2px rgba(0, 0, 0, .2));
   min-width: $collapse-at;
-  min-height: emize(41);
+  min-height: emize(43);
 
   ul {
     list-style: none;
@@ -36,13 +35,13 @@ $collapse-at: 61em;
       @include box-sizing(border-box);
       overflow: hidden;
       white-space: nowrap;
-      padding: emize(13, 13) 1em emize(13, 13);
+      padding: emize(14, 14) 1em emize(14, 14);
       margin: 0 -1px 0 0;
       color: $masthead-color;
       font-family: $sans-serif;
-      font-size: emize(13);
-      line-height: emize(15, 13);
-      height: emize(41, 13);
+      font-size: emize(14);
+      line-height: emize(16, 14);
+      height: emize(43, 14);
       outline: 0;
       border: transparent solid;
       border-width: 0 1px;
@@ -77,7 +76,7 @@ $collapse-at: 61em;
     &.open > a {
       background: $masthead-background-highlight;
       border-color: transparent $masthead-color;
-      font-size: 13px;
+      font-size: emize(14);
     }
     ul.dropdown-menu {
       top: 2.9em;
@@ -191,13 +190,13 @@ $collapse-at: 61em;
       top: .3em;
       display: block;
       color: $masthead-background;
-      font-size: emize(13);
+      font-size: emize(14);
     }
   }
   // Search box, expanded
   #masthead-search.expanded {
     position: absolute;
-    top: emize(41);
+    top: emize(43);
     right: 0;
     width: 34em;
     @media (max-width: $collapse-at) {
@@ -327,7 +326,7 @@ $collapse-at: 61em;
     }
     > nav {
       position: fixed;
-      top: emize(41);
+      top: emize(43);
       bottom: 0;
       left: 0;
       right: 0;
