@@ -425,6 +425,13 @@ $collapse-at: 61em;
   }
 }
 
+// Smooth scroll for iOS
+body.touch #malmo-masthead nav.masthead-main ul {
+  width: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+}
 
 .service-title, .app-title {
   padding: .5em .9em;
