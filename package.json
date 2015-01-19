@@ -1,19 +1,27 @@
 {
-  "name": "global-assets",
-  "version": "4.0.0",
-  "description": "Global assets for The City of Malmö",
+  "name": "global_assets",
+  "version": "4.0.9",
   "repository": {
     "type": "git",
-    "url": "git://github.com/malmostad/global-assets.git"
+    "url": "https://github.com/malmostad/global_assets"
   },
+  "homepage": "https://github.com/malmostad/global_assets",
+  "private": true,
   "author": "The City of Malmo",
   "license": "AGPL-3.0",
   "bugs": {
-    "url": "https://github.com/malmostad/global-assets/issues"
+    "url": "https://github.com/malmostad/global_assets/issues"
   },
-  "homepage": "https://github.com/malmostad/global-assets",
-  "dependencies": {
-    "grunt": "~0.4.0",
-    "grunt-grunticon": "~1.2.0"
+  "main": "Gruntfile.js",
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-contrib-sass": "~0.8.1",
+    "grunt-contrib-coffee": "~0.12.0",
+    "grunt-contrib-uglify": "~0.7.0",
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt-contrib-clean": "~0.6.0",
+    "coffee-script": "~1.8.0",
+    "express": "~4.11.0",
+    "bower": "~1.3.12"
   }
 }
