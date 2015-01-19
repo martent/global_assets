@@ -1,0 +1,8 @@
+development:
+  sass_style: expanded
+
+staging: &staging
+  sass_style: compressed
+
+production:
+  <<: *staging
