@@ -11,7 +11,7 @@ module.exports = (grunt) ->
   audience = grunt.option('audience') or "internal"
 
   grunt.initConfig
-    env: grunt.file.readYAML('config/environment.yml')[env]
+    env: grunt.file.readYAML('config/env.yml')[env]
     audience: grunt.file.readYAML('config/audience.yml')[audience][env]
     pkg: grunt.file.readJSON('package.json')
     foo: "<%= audience.sv_base_url %>"
