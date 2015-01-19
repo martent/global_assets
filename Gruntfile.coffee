@@ -47,5 +47,13 @@ module.exports = (grunt) ->
     grunt.log.writeln util.inspect grunt.config("audience")
     grunt.log.writeln grunt.config("foo")
 
+  # Lazy task to save typing
+  grunt.registerTask 'int', ->
+    grunt.option "audience", "internal"
+    grunt.runTask "build"
+  grunt.registerTask 'ext', ->
+    grunt.option "audience", "external"
+    grunt.runTask "build"
+
   grunt.registerTask 'build', ["clean", "sass"]
   grunt.registerTask "default", ["build"]
