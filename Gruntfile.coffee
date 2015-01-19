@@ -7,14 +7,14 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-contrib-watch'
   grunt.loadNpmTasks 'grunt-contrib-clean'
 
-  for_env = grunt.option("env") or 'development'
-  for_audience = grunt.option('audience') or "internal"
+  env = grunt.option("env") or 'development'
+  audience = grunt.option('audience') or "internal"
 
   grunt.initConfig
-    env: grunt.file.readYAML('config/environment.yml')[for_env]
-    audience: grunt.file.readYAML('config/audience.yml')[for_audience][for_env]
+    env: grunt.file.readYAML('config/environment.yml')[env]
+    audience: grunt.file.readYAML('config/audience.yml')[audience][env]
     pkg: grunt.file.readJSON('package.json')
-    x: "<%= audience.sv_base_url %>"
+    foo: "<%= audience.sv_base_url %>"
 
   grunt.registerTask 'foo', ->
     grunt.log.writeln grunt.config("pkg.name")
@@ -22,4 +22,6 @@ module.exports = (grunt) ->
     grunt.log.writeln grunt.config("audience.sv_base_url")
     grunt.log.writeln util.inspect grunt.config("env")
     grunt.log.writeln util.inspect grunt.config("audience")
-    grunt.log.writeln grunt.config("x")
+    grunt.log.writeln grunt.config("foo")
+
+  grunt.registerTask "default", ["foo"]
