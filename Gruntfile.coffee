@@ -15,6 +15,9 @@ module.exports = (grunt) ->
   audience = grunt.option('audience')
   audiences = ["internal", "external"]
 
+  if grunt.file.defaultEncoding isnt 'utf8'
+    grunt.fail.fatal("Your environments encoding is #{grunt.file.defaultEncoding} but must be 'utf8'")
+
   if audiences.indexOf(audience) is -1
     grunt.fail.fatal "You most specify an audience:\n\n  grunt --audience=[#{audiences}]\n"
 
@@ -27,6 +30,18 @@ module.exports = (grunt) ->
     clean:
       build: "build/*"
       dist: "dist/*"
+
+    watch:
+      sass:
+        files: 'app/assets/**/*.{scss,scss.tpl,css}'
+        tasks: ['build']
+      # coffee:
+      #   files: 'app/assets/**/*.{coffee,js,js.tpl}'
+      #   tasks: ['build']
+      options:
+        reload: true
+        liveReload: true
+        atBegin: true
 
     grunticon:
       icons:
@@ -104,5 +119,5 @@ module.exports = (grunt) ->
     grunt.log.writeln grunt.config("foo")
 
   grunt.registerTask "default", ["build"]
-  grunt.registerTask 'build', ["clean", "copy", "template", "sass"]
+  grunt.registerTask 'build', ["clean", "copy", "template", "sass", "clean:build"]
   grunt.registerTask 'icons', ['grunticon:icons']
