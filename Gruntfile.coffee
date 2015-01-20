@@ -7,6 +7,7 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-template'
   grunt.loadNpmTasks 'grunt-contrib-watch'
   grunt.loadNpmTasks 'grunt-template'
+  grunt.loadNpmTasks 'grunt-grunticon'
   grunt.loadNpmTasks 'grunt-contrib-copy'
   grunt.loadNpmTasks 'grunt-contrib-clean'
 
@@ -27,6 +28,25 @@ module.exports = (grunt) ->
       build: "build/*"
       dist: "dist/*"
 
+    grunticon:
+      icons:
+        files: [
+          expand: true,
+          cwd: 'masters/icons',
+          src: ['*.svg', '*.png'],
+          dest: 'app/assets/icons'
+        ]
+        options:
+          datasvgcss: "icons.data.svg.css"
+          datapngcss: "icons.data.png.css"
+          urlpngcss: "icons.fallback.css"
+          cssprefix: '.m-icon-'
+          customselectors:
+            "chevron-right": [".breadcrumbs li"]
+            "caret-down-0": [".box-menu .dropdown-toggle"]
+            "todo-0": [".act-now a::before"]
+          cssbasepath: '/'
+
     template:
       'process-html-template':
         options:
@@ -41,11 +61,11 @@ module.exports = (grunt) ->
       main:
         files: [
           {expand: true, cwd: 'app/assets/stylesheets/', src: ['**'], dest: 'build/'}
-          {expand: true, cwd: 'app/assets/icons/', src: ['**'], dest: 'build/'}
           {expand: true, cwd: 'vendor/malmo_shared_assets/stylesheets/', src: ['**'], dest: 'build/'}
           {expand: true, cwd: 'vendor/assets/', src: ['fonts/*.*'], dest: 'build/', filter: 'isFile' }
           {expand: true, cwd: 'node_modules/bootstrap-sass/assets/stylesheets/', src: ['**'], dest: 'build/'}
           {expand: true, cwd: 'node_modules/bootstrap-datepicker/css/', src: ['**'], dest: 'build/'}
+          {expand: true, cwd: 'app/assets/icons/', src: ['**'], dest: 'dist/'}
           {src: ['node_modules/bootstrap-datepicker/css/datepicker3.css'], dest: 'build/datepicker3.scss'}
           {src: ['vendor/assets/stylesheets/jquery-ui.helpers.min.css'], dest: 'build/jquery-ui.helpers.min.scss'}
         ]
@@ -55,6 +75,8 @@ module.exports = (grunt) ->
         options:
           style: "<%= env.sass_style %>"
           sourcemap: "<%= env.source_maps %>"
+          lineNumbers: true
+          precision: 10
           loadPath: [
             "build/shared"
             "build/#{audience}"
@@ -67,9 +89,6 @@ module.exports = (grunt) ->
             'malmo.scss'
             'legacy/ie8.scss'
             'masthead_standalone.scss'
-            'icons.data.svg.css'
-            'icons.data.png.css'
-            'icons.fallback.css'
             'portwise.scss'
           ]
           dest: 'dist'
@@ -86,3 +105,4 @@ module.exports = (grunt) ->
 
   grunt.registerTask "default", ["build"]
   grunt.registerTask 'build', ["clean", "copy", "template", "sass"]
+  grunt.registerTask 'icons', ['grunticon:icons']
