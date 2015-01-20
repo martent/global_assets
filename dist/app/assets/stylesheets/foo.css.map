@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AAEE;yBAAE;EACA,OAAO,EAAE,KAAK;EACd,QAAQ,EAAE,QAAQ;EAClB,MAAM,EAAE,KAAK;EACb,OAAO,EAAE,cAAc",
-"sources": ["../../../../app/assets/stylesheets/bar.scss"],
-"names": [],
-"file": "foo.css"
-}

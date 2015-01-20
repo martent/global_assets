@@ -21,7 +21,7 @@ module.exports = (grunt) ->
     pkg: grunt.file.readJSON('package.json')
     foo: "<%= audience.sv_base_url %>"
 
-    clean: ["build/*.*", "dist/*.*"]
+    clean: ["build/*", "dist/*"]
 
     sass:
       compile:
