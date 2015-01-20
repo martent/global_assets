@@ -41,6 +41,7 @@ module.exports = (grunt) ->
       main:
         files: [
           {expand: true, cwd: 'app/assets/stylesheets/', src: ['**'], dest: 'build/'}
+          {expand: true, cwd: 'app/assets/icons/', src: ['**'], dest: 'build/'}
           {expand: true, cwd: 'vendor/malmo_shared_assets/stylesheets/', src: ['**'], dest: 'build/'}
           {expand: true, cwd: 'vendor/assets/', src: ['fonts/*.*'], dest: 'build/', filter: 'isFile' }
           {expand: true, cwd: 'node_modules/bootstrap-sass/assets/stylesheets/', src: ['**'], dest: 'build/'}
@@ -65,6 +66,11 @@ module.exports = (grunt) ->
             # Use the Sass declarations `@import` in the main scss file application.scss
             'malmo.scss'
             'legacy/ie8.scss'
+            'masthead_standalone.scss'
+            'icons.data.svg.css'
+            'icons.data.png.css'
+            'icons.fallback.css'
+            'portwise.scss'
           ]
           dest: 'dist'
           ext: '.css'
@@ -79,4 +85,4 @@ module.exports = (grunt) ->
     grunt.log.writeln grunt.config("foo")
 
   grunt.registerTask "default", ["build"]
-  grunt.registerTask 'build', ["clean", "copy", "template", "sass", "clean:build"]
+  grunt.registerTask 'build', ["clean", "copy", "template", "sass"]
