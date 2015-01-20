@@ -6,6 +6,8 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-contrib-uglify'
   grunt.loadNpmTasks 'grunt-template'
   grunt.loadNpmTasks 'grunt-contrib-watch'
+  grunt.loadNpmTasks 'grunt-template'
+  grunt.loadNpmTasks 'grunt-contrib-copy'
   grunt.loadNpmTasks 'grunt-contrib-clean'
 
   env = grunt.option("env") or "development"
@@ -21,19 +23,48 @@ module.exports = (grunt) ->
     pkg: grunt.file.readJSON('package.json')
     foo: "<%= audience.sv_base_url %>"
 
-    clean: ["build/*", "dist/*"]
+    clean:
+      build: "build/*"
+      dist: "dist/*"
+
+    template:
+      'process-html-template':
+        options:
+          data:
+            audience: audience
+            env: env
+        files:
+          'build/malmo.scss': ['build/malmo.scss.tpl']
+          'build/masthead_standalone.scss': ['build/masthead_standalone.scss.tpl']
+
+    copy:
+      main:
+        files: [
+          {expand: true, cwd: 'app/assets/stylesheets/', src: ['**'], dest: 'build/'}
+          {expand: true, cwd: 'vendor/malmo_shared_assets/stylesheets/', src: ['**'], dest: 'build/'}
+          {expand: true, cwd: 'vendor/assets/', src: ['fonts/*.*'], dest: 'build/', filter: 'isFile' }
+          {expand: true, cwd: 'node_modules/bootstrap-sass/assets/stylesheets/', src: ['**'], dest: 'build/'}
+          {expand: true, cwd: 'node_modules/bootstrap-datepicker/css/', src: ['**'], dest: 'build/'}
+          {src: ['node_modules/bootstrap-datepicker/css/datepicker3.css'], dest: 'build/datepicker3.scss'}
+          {src: ['vendor/assets/stylesheets/jquery-ui.helpers.min.css'], dest: 'build/jquery-ui.helpers.min.scss'}
+        ]
 
     sass:
       compile:
         options:
           style: "<%= env.sass_style %>"
           sourcemap: "<%= env.source_maps %>"
+          loadPath: [
+            "build/shared"
+            "build/#{audience}"
+          ]
         files: [
+          cwd: "build"
           expand: true
           src: [
             # Use the Sass declarations `@import` in the main scss file application.scss
-            'app/assets/stylesheets/foo.scss'
-            'app/assets/stylesheets/legacy/ie8.scss'
+            'malmo.scss'
+            'legacy/ie8.scss'
           ]
           dest: 'dist'
           ext: '.css'
@@ -47,13 +78,5 @@ module.exports = (grunt) ->
     grunt.log.writeln util.inspect grunt.config("audience")
     grunt.log.writeln grunt.config("foo")
 
-  # Lazy task to save typing
-  grunt.registerTask 'int', ->
-    grunt.option "audience", "internal"
-    grunt.runTask "build"
-  grunt.registerTask 'ext', ->
-    grunt.option "audience", "external"
-    grunt.runTask "build"
-
-  grunt.registerTask 'build', ["clean", "sass"]
   grunt.registerTask "default", ["build"]
+  grunt.registerTask 'build', ["clean", "copy", "template", "sass", "clean:build"]

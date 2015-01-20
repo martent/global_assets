@@ -1,11 +1,11 @@
-@import 'malmo_<%= ENV["AUDIENCE"] %>';
+@import 'malmo_<%= audience %>';
 @import 'bootstrap_custom';
 @import 'jquery-ui.helpers.min';
 @import 'autocomplete';
 @import 'elements';
 @import 'forms';
 @import 'fonts';
-@import '<%= ENV["AUDIENCE"] %>/masthead';
+@import '<%= audience %>/masthead';
 @import 'breadcrumbs';
 @import 'basic_aside';
 @import 'content_nav';
@@ -23,6 +23,6 @@
 @import 'survey';
 @import 'utils';
 @import 'token_input_theme';
-@import 'bootstrap-datepicker3';
+@import 'datepicker3';
 @import 'print';
 @import 'hacks';
