@@ -42,7 +42,7 @@ jQuery ($) ->
     href = $a.attr('href')
     if typeof href is "string"
       href = href.split('.').pop()
-      extension  = href.split('#').shift(); # pdf files has an # in the search results
+      extension  = href.split('#').shift() # pdf files has an # in the search results
 
       if $.inArray(extension, fileTypes) isnt -1
         $a.click (event) ->
