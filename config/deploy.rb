@@ -42,7 +42,7 @@ namespace :deploy do
 
   task :continue do
     if audience.nil? || !audiences.include?(audience)
-      puts "\033[1;31mYou must set to AUDIENCE=internal or AUDIENCE=external in your command, e.g.:\033[0m"
+      puts "\033[1;31mYou must set AUDIENCE=internal or AUDIENCE=external in your command, e.g.:\033[0m"
       puts "  \033[0;32m$ AUDIENCE=internal bundle exec cap staging deploy\033[0m"
       Kernel.exit(1)
     end
