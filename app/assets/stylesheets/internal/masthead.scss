@@ -1,4 +1,4 @@
-$collapse-at: 64em;
+$collapse-at: 65em;
 
 #malmo-masthead {
   position: fixed;
@@ -35,7 +35,7 @@ $collapse-at: 64em;
       @include box-sizing(border-box);
       overflow: hidden;
       white-space: nowrap;
-      padding: emize(14, 14) 1em emize(14, 14);
+      padding: emize(13, 14) 1em emize(15, 14);
       margin: 0 -1px 0 0;
       color: $masthead-color;
       font-family: $sans-serif;
@@ -138,7 +138,7 @@ $collapse-at: 64em;
         background-position: 25% 50%;
       }
     }
-    @media (max-width: 74em) {
+    @media (max-width: 76em) {
       display: none;
     }
   }
@@ -433,20 +433,6 @@ body.touch #malmo-masthead nav.masthead-main ul {
   -webkit-overflow-scrolling: touch;
 }
 
-.service-title, .app-title {
-  padding: .5em .9em;
-  line-height: 1;
-  margin: 0 0 1em;
-  background-color: $background-light;
-  border: $border;
-  border-width: 1px 0;
-  font-size: emize(13);
-  font-weight: normal;
-  font-family: $sans-serif;
-  a {
-    color: #000;
-  }
-}
 ul.ui-autocomplete li .hits {
   float: right;
 }
