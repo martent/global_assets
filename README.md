@@ -103,10 +103,10 @@ The `columns()` mixin from [`shared_assets`](https://github.com/malmostad/shared
 Use Coffeescript for JavaScript development and organize it in smaller files that will be imported in the malmo.js file using the Sprockets syntax. The files are automatically served as individual files in the development application for easy debugging and concatenated and compressed in the build phase.
 
 ### The Masthead and the footer
-The common masthead and the footer that must be on every application page is found in `app/assets/content/[internal|external]masthead.html.erb`. The code is transform to a Javascript string during the Capistrano build process for fast injection on every page or view. They are also built when you launch the servern in development mode.
+The common masthead and the footer that must be on every application page is found in `app/assets/content/[internal|external]masthead.html.erb`. The code is transformed to a Javascript string during the Capistrano build process for fast injection on every page or view. They are also built when you launch the servern in development mode.
 
 ### Icons
-Use SVGs icons, not png images or sprites.
+Use SVGs icons, not png images, sprites or icon fonts. See [Build Icons](#build-icons) above
 
 ### Gradients, Rounded Corners and Shadows
 For gradients, rounded corners and related stuff, use CSS3. Use solid background colors as a fallback. Use the Sass mixins for vendor prefixes to keep the code clean.
