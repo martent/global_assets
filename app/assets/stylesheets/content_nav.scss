@@ -22,9 +22,11 @@ nav.content {
     border-bottom: $border;
     color: #000;
     margin: 0;
-    &:hover {
-      background: $background-light;
-      text-decoration: none;
-    }
+  }
+  li a:hover,
+  li.current a,
+  li a.current {
+    background: $background-light;
+    text-decoration: none;
   }
 }

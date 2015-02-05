@@ -8,5 +8,8 @@ jQuery ($) ->
   $(window).on 'hashchange load', ->
     if window.location.hash and $("#malmo-masthead").css('position') is 'fixed' and
         (typeof preventScrollForMasthead is 'undefined' or preventScrollForMasthead is false) and
-        $(window.location.hash).length
-      window.scrollTo(0, $(window.location.hash).offset().top - 60)
+        window.location.hash.length
+      try
+        window.scrollTo(0, $(window.location.hash).offset().top - 60)
+      catch e
+        false

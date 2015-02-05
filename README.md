@@ -102,15 +102,8 @@ The `columns()` mixin from [`shared_assets`](https://github.com/malmostad/shared
 ### Coffeescript
 Use Coffeescript for JavaScript development and organize it in smaller files that will be imported in the malmo.js file using the Sprockets syntax. The files are automatically served as individual files in the development application for easy debugging and concatenated and compressed in the build phase.
 
-### The Masthead and the Bigfoot
-The common masthead that must be on every application page is found in `app/assets/content/masthead.html.erb`. The code is transform to a Javascript string during the Capistrano build process for fast injection on every page or view. To transform and display it during development, run the following task:
-
-```shell
-$ AUDIENCE=external bundle exec rake build:masthead
-$ AUDIENCE=external bundle exec rake build:footer
-$ AUDIENCE=internal bundle exec rake build:masthead
-$ AUDIENCE=internal bundle exec rake build:footer
-```
+### The Masthead and the footer
+The common masthead and the footer that must be on every application page is found in `app/assets/content/[internal|external]masthead.html.erb`. The code is transform to a Javascript string during the Capistrano build process for fast injection on every page or view. They are also built when you launch the servern in development mode.
 
 ### Icons
 Use SVGs icons, not png images or sprites.
