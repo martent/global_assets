@@ -38,9 +38,11 @@
     margin-bottom: 2em;
   }
   .show-on-map {
-    background-size: 1em;
-    background-position: 0 3px;
+    display: inline-block;
+    margin-top: .5em;
     padding-left: 1.4em;
+    background-size: 1em;
+    background-position: 0 5px;
   }
   .contact-us-map {
     display: none;
