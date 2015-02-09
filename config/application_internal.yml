@@ -22,6 +22,7 @@ staging:
   site_search_ac_url: //webapps06.malmo.se/dashboard-test/search/autocomplete
   asset_host: //assets.malmo.se/internal/v4-staging/
   ua_account: 'UA-19475064-1'
+  dashboard_base_url: "https://webapps06.malmo.se/dashboard-test/"
 
 production:
   <<: *default
