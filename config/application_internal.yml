@@ -1,7 +1,7 @@
 default: &default
   sv_base_url: https://komin.malmo.se/
-  site_search_url: //188.226.144.234
-  site_search_ac_url: //188.226.144.234/search/autocomplete
+  site_search_url: //webapps06.malmo.se/dashboard/search
+  site_search_ac_url: //webapps06.malmo.se/dashboard/search/autocomplete
   asset_host: //assets.malmo.se/internal/v4/
   ua_account: 'UA-1659147-1'
   dashboard_base_url: "https://webapps06.malmo.se/dashboard/"
@@ -18,6 +18,8 @@ development: &development
 staging:
   <<: *default
   sv_base_url: http://www.test.malmo.se/
+  site_search_url: //webapps06.malmo.se/dashboard-test/search
+  site_search_ac_url: //webapps06.malmo.se/dashboard-test/search/autocomplete
   asset_host: //assets.malmo.se/internal/v4-staging/
   ua_account: 'UA-19475064-1'
 
