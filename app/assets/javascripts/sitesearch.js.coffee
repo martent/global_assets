@@ -39,6 +39,7 @@ jQuery ($) ->
       data:
         q: request.term.toLowerCase()
       dataType: "jsonp"
+      jsonpCallback: "results"
       success: (data) ->
         if data.length
           response $.map data, (item) ->
