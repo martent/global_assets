@@ -17,7 +17,7 @@ development: &development
 
 staging:
   <<: *default
-  sv_base_url: http://www.test.malmo.se/
+  sv_base_url: https://komin.test.malmo.se/
   site_search_url: //webapps06.malmo.se/dashboard-test/search
   site_search_ac_url: //webapps06.malmo.se/dashboard-test/search/autocomplete
   asset_host: //assets.malmo.se/internal/v4-staging/
