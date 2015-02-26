@@ -1,7 +1,7 @@
 # Autocomplete for site search
 jQuery ($) ->
   # Covers both masthead search and the search page form
-  searchFields = ["#full-search #q", "#masthead-search .q"]
+  searchFields = ["#full-search #q", "#masthead-search .q", "#start-search-intranet"]
   for searchField in searchFields
     do ->
       $searchField = $(searchField)

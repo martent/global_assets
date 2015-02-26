@@ -1,6 +1,6 @@
 $ ->
   # Autocomplete on employee search
-  queryEmployeeFields = ["#query-employee", "#masthead-q-employee"]
+  queryEmployeeFields = ["#query-employee", "#masthead-q-employee", "#start-search-employees"]
   items = 0
   requestTerm = ""
   for queryEmployeeField in queryEmployeeFields
