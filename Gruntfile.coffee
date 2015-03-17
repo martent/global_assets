@@ -15,9 +15,10 @@ module.exports = (grunt) ->
           urlpngcss: "icons.fallback.css"
           cssprefix: '.m-icon-'
           customselectors:
-           "chevron-right": [".breadcrumbs li"]
-           "caret-down-0": [".box-menu .dropdown-toggle"]
-           "todo-0": [".act-now a::before"]
+            "chevron-right": [".breadcrumbs li"]
+            "caret-down": [".box-2 .box-menu .dropdown-toggle"]
+            "caret-down-0": [".box .box-menu .dropdown-toggle"]
+            "todo-0": [".act-now a::before"]
           cssbasepath: '/'
           # defaultWidth: '300px',
           # defaultHeight: '200px',
