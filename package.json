@@ -14,6 +14,6 @@
   "homepage": "https://github.com/malmostad/global-assets",
   "dependencies": {
     "grunt": "~0.4.0",
-    "grunt-grunticon": "~1.2.0"
+    "grunt-grunticon": "~2.0.0"
   }
 }

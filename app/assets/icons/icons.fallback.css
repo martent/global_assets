@@ -2,9 +2,10 @@
 
 .m-icon-calendar { background-image: url('png/calendar.png'); background-repeat: no-repeat; }
 
-.box-menu .dropdown-toggle,
+.box .box-menu .dropdown-toggle,
 .m-icon-caret-down-0 { background-image: url('png/caret-down-0.png'); background-repeat: no-repeat; }
 
+.box-2 .box-menu .dropdown-toggle,
 .m-icon-caret-down { background-image: url('png/caret-down.png'); background-repeat: no-repeat; }
 
 .breadcrumbs li,
