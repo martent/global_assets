@@ -29,7 +29,7 @@ module AssetsContainer
       masthead_standalone.css
       masthead_standalone.js
       masthead_standalone_without_jquery.js
-      google_analytics.js
+      analytics.js
       html5shiv-printshiv.js
       legacy/ie8.css
       icons.data.svg.css

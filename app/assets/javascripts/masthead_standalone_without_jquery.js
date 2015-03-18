@@ -7,4 +7,5 @@
 //= require sitesearch
 //= require footer_content
 //= require footer
-//= require google_analytics
+//= require analytics
+//= require analytics_shared
