@@ -7,3 +7,17 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 
 ga('create', UAAccount, 'auto');
 window.ga = ga;
+
+// Translates some old GA logging types (_track*, _set*) to Universal Analytics
+window._gaq = new function() {
+  this.push = function(gam) {
+    try {
+      if (typeof gam == 'object' && gam[0]) {
+        var gaType = gam[0].replace(/_track|_set/, '').toLowerCase();
+        gam.shift();
+        ga.apply(this, ['send', gaType].concat(gam));
+      }
+    }
+    catch (e) {}
+  };
+};

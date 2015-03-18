@@ -1,21 +1,3 @@
-# TODO: Legacy Google Analytics, remove after transfer to Universal Analytics
-window._gaq = []
-_gaq.push(['_setAccount', UAAccount])
-_gaq.push(['_setDomainName', '.malmo.se'])
-
-(->
-  ga = document.createElement('script')
-  ga.type = 'text/javascript'
-  ga.async = true
-  ga.src = (if 'https:' is document.location.protocol then 'https://ssl' else 'http://www') + '.google-analytics.com/ga.js'
-  s = document.getElementsByTagName('script')[0]
-  s.parentNode.insertBefore(ga, s)
-  return
-)()
-# TODO: END
-
-
-
 jQuery ($) ->
   # Delay click events so GA has time to collect data before executed
   window.gaDelayEvent = ($a, event) ->
