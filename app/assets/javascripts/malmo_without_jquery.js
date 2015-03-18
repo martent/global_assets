@@ -1,5 +1,6 @@
-//= require google_analytics
-//= require google_analytics_additions
+//= require analytics
+//= require analytics_shared
+//= require analytics_additions
 //= require grunticon.loader
 //= require grunticons
 //= require utils

@@ -78,10 +78,10 @@ jQuery ($) ->
     GAValue = "#{item.value} #{item.link}"
 
     # Track all clicks on recommendations and suggestions (type)
-    _gaq.push(['_trackEvent', "#{item.caller}AutoComplete#{item.type}Click", GALabel, GAValue])
+    ga('send', 'event', "#{item.caller}AutoComplete#{item.type}Click", GALabel, GAValue)
 
     setTimeout("document.location = '#{item.link}'", 200)
 
   logAcToGa = ($searchField, chars) ->
     # Track the chars that the user entered
-    _gaq.push(['_trackEvent', "#{$searchField.attr("data-caller")}AutoComplete", "EnteredCharacters", chars])
+    ga('send', 'event', "#{$searchField.attr("data-caller")}AutoComplete", "EnteredCharacters", chars)

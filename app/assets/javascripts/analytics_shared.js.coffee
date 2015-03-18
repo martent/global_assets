@@ -1,19 +1,19 @@
-window.UAAccount = "<%= APP_CONFIG['ua_account'] %>"
-
-window._gaq = []
-_gaq.push(['_setAccount', UAAccount])
-_gaq.push(['_setDomainName', '.malmo.se'])
-
-(->
-  ga = document.createElement('script')
-  ga.type = 'text/javascript'
-  ga.async = true
-  ga.src = (if 'https:' is document.location.protocol then 'https://ssl' else 'http://www') + '.google-analytics.com/ga.js'
-  s = document.getElementsByTagName('script')[0]
-  s.parentNode.insertBefore(ga, s)
-  return
-)()
-
+# window.UAAccount = "<%= APP_CONFIG['ua_account'] %>"
+#
+# window._gaq = []
+# _gaq.push(['_setAccount', UAAccount])
+# _gaq.push(['_setDomainName', '.malmo.se'])
+#
+# (->
+#   ga = document.createElement('script')
+#   ga.type = 'text/javascript'
+#   ga.async = true
+#   ga.src = (if 'https:' is document.location.protocol then 'https://ssl' else 'http://www') + '.google-analytics.com/ga.js'
+#   s = document.getElementsByTagName('script')[0]
+#   s.parentNode.insertBefore(ga, s)
+#   return
+# )()
+#
 jQuery ($) ->
   # Delay click events so GA has time to collect data before executed
   window.gaDelayEvent = ($a, event) ->
@@ -23,16 +23,16 @@ jQuery ($) ->
 
   # Check if a custom URI is defined on the Sitevision page
   if typeof currentURI is "string"
-    _gaq.push(['_trackPageview', currentURI + document.location.search])
+    ga('send', 'pageview', currentURI + document.location.search)
   else
-    _gaq.push(['_trackPageview'])
+    ga('send', 'pageview')
 
   # Track outgoing links as regular page views
   $("a[href^='http://'], a[href^='https://']").click (event) ->
     $a = $(@)
     # Don't hijack href's in search results and URL's to malmo.se apps
     if $a.parents('div.search').length is 0 and !$a.attr('href').match(/.malmo\.se\//)
-      _gaq.push(['_trackPageview', 'ExternalLink ' + $a.attr("href")])
+      ga('send', 'pageView', 'ExternalLink ' + $a.attr("href"))
       gaDelayEvent($a, event)
 
   # Track file downloads
@@ -47,5 +47,5 @@ jQuery ($) ->
       if $.inArray(extension, fileTypes) isnt -1
         $a.click (event) ->
           link = $(this).attr("href")
-          _gaq.push(['_trackPageview', 'FileDownload ' + link])
+          ga('send', 'pageView', 'FileDownload ' + link)
           gaDelayEvent($a, event)

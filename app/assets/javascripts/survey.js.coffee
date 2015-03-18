@@ -41,17 +41,15 @@ jQuery ($) ->
       # Push answers to Google Analytics
       pushToGA = (values) ->
         $.each values, ->
-          _gaq.push [
-            '_trackEvent'
+          ga('send', 'event',
             # GA "Event Category"
-            surveyName
+            surveyName,
             # GA "Event Action"
-            @.name
+            @.name,
             # GA "Event label"
-            @.value
+            @.value,
             # GA "Event Value", if integer
-            (if parseInt(@value, 10) is @value then parseInt(@value, 10) else 0)
-          ]
+            (if parseInt(@value, 10) is @value then parseInt(@value, 10) else 0))
           return
         return
 
