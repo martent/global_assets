@@ -1,7 +1,7 @@
 default: &default
   sv_base_url: https://komin.malmo.se/
-  site_search_url: //srvubuwebhost15.malmo.se/
-  site_search_ac_url: //srvubuwebhost15.malmo.se/search/autocomplete
+  site_search_url: //s2.malmo.se/
+  site_search_ac_url: //s2.malmo.se/search/autocomplete
   asset_host: //assets.malmo.se/internal/v4/
   ua_account: 'UA-1659147-1'
   dashboard_base_url: "https://webapps06.malmo.se/dashboard/"
