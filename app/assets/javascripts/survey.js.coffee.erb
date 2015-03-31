@@ -26,7 +26,7 @@ jQuery ($) ->
 
     # Open survey in modal lightbox and take care of user events
     initSurvey = ->
-      surveyName =  if msettings.audience is 'external' then 'Survey malmo.se' else 'Survey Komin'
+      surveyName =  if msettings.audience is 'external' then 'Survey malmo.se' else 'Survey'
 
       # Switch between pages in the survey
       showSlide = (slide) ->
@@ -73,7 +73,7 @@ jQuery ($) ->
         return
 
       # Attach survey markup
-      $survey = $(surveyMarkup)
+      $survey = $(msettings.surveyMarkup)
       $('body div.wrapper').first().prepend $survey
 
       # User want to take the survey

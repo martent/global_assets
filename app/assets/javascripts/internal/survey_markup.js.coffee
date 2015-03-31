@@ -1,4 +1,4 @@
-surveyMarkup = '<section id="survey" class="box">
+msettings.surveyMarkup = '<section id="survey" class="box">
   <h1 class="box-title">Vi behöver din åsikt!</h1>
   <form id="survey-form" action="/" method="get">
     <section class="page-1 box-content">
