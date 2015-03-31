@@ -1,0 +1,2 @@
+jQuery ($) ->
+  $.cookie.json = true

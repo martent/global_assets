@@ -1,3 +1,4 @@
+//= require settings
 //= require analytics
 //= require analytics_shared
 //= require analytics_additions
