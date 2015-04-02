@@ -73,15 +73,14 @@ jQuery ($) ->
     $("<li class='ui-autocomplete-category'>Sök på:</li>")
       .insertBefore $widget.find(".suggestion:first")
 
+  # GA log the recommendation or suggestion in autocomplete that the user selected
   logToGaAndGo = (item, requestTerm) ->
     GALabel = requestTerm
     GAValue = "#{item.value} #{item.link}"
-
-    # Track all clicks on recommendations and suggestions (type)
     ga('send', 'event', "#{item.caller}AutoComplete#{item.type}Click", GALabel, GAValue)
 
     setTimeout("document.location = '#{item.link}'", 200)
 
+  # GA log the chars that the user entered in autocomplete
   logAcToGa = ($searchField, chars) ->
-    # Track the chars that the user entered
-    ga('send', 'event', "#{$searchField.attr("data-caller")}AutoComplete", "EnteredCharacters", chars)
+    ga('send', 'event', "#{$searchField.attr("data-caller")}AutoComplete", "EnteredCharacters", chars, chars.length)
