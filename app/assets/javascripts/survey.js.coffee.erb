@@ -44,9 +44,6 @@ jQuery ($) ->
       # Push answers to Google Analytics
       pushToGA = (values) ->
         $.each values, ->
-          console.log @name
-          console.log (if "#{parseInt(@value, 10)}" is @value then @value else null)
-
           ga('send', 'event',
             # GA "Event Category"
             surveyName,
