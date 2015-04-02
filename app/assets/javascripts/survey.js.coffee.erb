@@ -1,3 +1,6 @@
+runSurvey = true
+debugSurvey = true
+
 jQuery ($) ->
   #
   # This bastard creates a survey form and push the answers and some other data into Google Analytics
@@ -41,15 +44,19 @@ jQuery ($) ->
       # Push answers to Google Analytics
       pushToGA = (values) ->
         $.each values, ->
+          console.log @name
+          console.log (if "#{parseInt(@value, 10)}" is @value then @value else null)
+
           ga('send', 'event',
             # GA "Event Category"
             surveyName,
             # GA "Event Action"
-            @.name,
+            @name,
             # GA "Event label"
-            @.value,
+            @value,
             # GA "Event Value", if integer
-            (if parseInt(@value, 10) is @value then parseInt(@value, 10) else 0))
+            (if "#{parseInt(@value, 10)}" is @value then @value else null)
+          )
           return
         return
 
