@@ -15,7 +15,7 @@ jQuery ($) ->
   $("a[href^='http://'], a[href^='https://']").click (event) ->
     $a = $(@)
     # Don't hijack href's in search results and URL's to malmo.se apps
-    if $a.parents('div.search').length is 0 and !$a.attr('href').match(/.malmo\.se\//)
+    if $a.parents('.search-and-results').length is 0 and !$a.attr('href').match(/.malmo\.se\//)
       ga('send', 'pageView', 'ExternalLink ' + $a.attr("href"))
       gaDelayEvent($a, event)
 
