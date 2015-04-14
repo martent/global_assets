@@ -324,7 +324,7 @@ $collapse-at: 65em;
     #masthead-search.expanded input.q {
       max-width: 55%;
     }
-    > nav {
+    > nav.masthead-main {
       position: fixed;
       top: emize(43);
       bottom: 0;
