@@ -8,13 +8,13 @@ jQuery ($) ->
     $("#nav-search-trigger").is(":visible")
 
   hideNav = ->
-    $("body").removeClass("nav-open");
+    $("body").removeClass("nav-open")
     $malmoMastheadNav.removeClass("expanded")
     $(document).off 'click.nav'
 
   showNav = (event) ->
     hideSearch()
-    $("body").addClass("nav-open");
+    $("body").addClass("nav-open")
     $malmoMastheadNav.addClass("expanded")
     # Close on click outside the list
     $(document).on 'click.nav', (event) ->
@@ -59,7 +59,7 @@ jQuery ($) ->
   if profile.workingfields then hijackNav('#nav-my-workingfield', profile.workingfields, 'Mina arbetsfält')
 
   $("#nav-menu-trigger a").click (event) ->
-    event.preventDefault();
+    event.preventDefault()
     if $("#malmo-masthead nav.masthead-main").is(":hidden") then showNav(event) else hideNav()
 
   # Browser sniffing hack for landscape text size on iPhone. Note: Prevents zooming on desktops so we limit it to iOS.
