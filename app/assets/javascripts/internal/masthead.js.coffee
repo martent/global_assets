@@ -45,7 +45,7 @@ jQuery ($) ->
   # environments for the profile
   # Set test or development as a class in the body tag if applicable
   development = $('body').hasClass('development')
-  test = $('body').hasClass('test')
+  test = $('body').hasClass('test') or (typeof env isnt "undefined" and env is 'test')
 
   # Users profile from the Dashboard is available in a cookie.
   $.cookie.json = true
