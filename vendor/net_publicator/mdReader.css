@@ -1,0 +1,102 @@
+/* Modified material from Net Publicator. 
+   Displays a file browser with Platina documents.
+*/
+#r_poweredrow {
+  display: none;
+}
+#mdReaderContainer {
+  padding: 0;
+  font-family: 'OpenSans', 'Droid Sans', 'Verdana', 'DejaVu Sans', sans-serif;
+  font-size: 14px;
+  color: #222222;
+}
+.error {
+  padding-top: 20px;
+}
+.error h1 {
+  color: DarkRed;
+  font-size: 16px;
+  padding: 0;
+  margin: 0;
+}
+.rbDiv {
+  display: table-cell;
+}
+.rbDiv a {
+  color: #005571;
+  text-decoration: none;
+}
+.rbDiv a:hover {
+  color: #092833;
+  text-decoration: underline;
+}
+.rbDiv div {
+  float: left;
+}
+.rbDivArrow {
+  background-image: url(gfx/arrow_next_dark.png);
+  background-repeat: no-repeat;
+  background-position: right center;
+  padding-right: 30px;
+}
+
+#breadCrumb {
+  padding-bottom: .4em;
+  line-height: 1.5;
+}
+/*RDIV*/
+
+.rdiv {
+  width: 100%;
+  overflow: hidden;
+  word-wrap: break-word
+}
+.rdivHeader {
+  margin-top: 5px;
+  border-top: 1px solid #b5b5b5;
+}
+.rdivBody {}
+.rdivItem, .rdivItemParent {
+  padding-top: 8px;
+  padding-bottom: 10px;
+  cursor: default;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  padding-left: 30px;
+  padding-right: 10px;
+  background-position: 5px center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+.rdivItemParent {
+  border-bottom: 1px solid #b5b5b5;
+}
+.rdivItemHover, .rdivItemParentHover {
+  background-color: #f5f5f5;
+  border-top: 1px solid #b5b5b5;
+  border-bottom: 1px solid #b5b5b5;
+}
+.rdivItemIcon_Document {
+  background-image: url(gfx/pdf_small.png);
+}
+.rdivItemIcon_Meeting {
+  background-image: url(gfx/meeting_small.png);
+}
+.rdivItemIcon_Channel {
+  background-image: url(gfx/channel_small.png);
+}
+.rdivItemIcon_Backwards {
+  background-image: url(gfx/arrow.png);
+}
+.rOverlay {
+  top: 0;
+  left: 0;
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  z-index: 9001;
+  background-image: url('gfx/indicator.gif');
+  background-repeat: no-repeat;
+  background-position: center center;
+}

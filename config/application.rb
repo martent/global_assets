@@ -36,6 +36,8 @@ module AssetsContainer
       icons.data.png.css
       icons.fallback.css
       portwise.css
+      mdReader.css
+      mdReader.js
     )
 
     config.assets.paths += [
@@ -43,7 +45,9 @@ module AssetsContainer
       Rails.root.join("vendor", "malmo_shared_assets", "stylesheets").to_s,
       Rails.root.join("vendor", "malmo_shared_assets", "stylesheets", "shared").to_s,
       Rails.root.join("vendor", "malmo_shared_assets", "stylesheets", "external").to_s,
-      Rails.root.join("vendor", "malmo_shared_assets", "stylesheets", "internal").to_s
+      Rails.root.join("vendor", "malmo_shared_assets", "stylesheets", "internal").to_s,
+      Rails.root.join("vendor", "net_publicator").to_s,
+      Rails.root.join("vendor", "net_publicator", "gfx").to_s
     ]
   end
 end
