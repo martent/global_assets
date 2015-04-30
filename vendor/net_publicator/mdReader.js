@@ -62,7 +62,7 @@ function runmd() {
       masterMD.history.push(masterMD.rootID);
       addCompleteHistory({
         'id': masterMD.rootID,
-        'text': 'Dokument',
+        'text': 'DokumentA',
         'type': 'root',
         'index': 0,
         'data': {}
@@ -77,7 +77,7 @@ function runmd() {
           masterMD.history.push(masterMD.rootID);
           addCompleteHistory({
             'id': masterMD.rootID,
-            'text': 'Dokument',
+            'text': 'DokumentB',
             'type': 'root',
             'index': 0,
             'data': {}
@@ -97,7 +97,7 @@ function runmd() {
           masterMD.history.push(masterMD.rootID);
           addCompleteHistory({
             'id': masterMD.rootID,
-            'text': 'Dokument',
+            'text': 'DokumentC',
             'type': 'root',
             'index': 0,
             'data': {}
@@ -108,7 +108,7 @@ function runmd() {
         masterMD.history.push(masterMD.rootID);
         addCompleteHistory({
           'id': masterMD.rootID,
-          'text': 'Dokument',
+          'text': 'DokumentD',
           'type': 'root',
           'index': 0,
           'data': {}
@@ -120,7 +120,7 @@ function runmd() {
     masterMD.history.push(masterMD.rootID);
     addCompleteHistory({
       'id': masterMD.rootID,
-      'text': 'Dokument',
+      'text': 'DokumentE',
       'type': 'root',
       'index': 0,
       'data': {}
@@ -566,7 +566,7 @@ var masterMD = {
   'table': 0,
   'history': [],
   'completeHistory': [],
-  'currentPage': 12,
+  'currentPage': 0,
   'rootID': 'ded8716df49637',
   'readerName': 'r56703224',
   'sortOpen': false,
