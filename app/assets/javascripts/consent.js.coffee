@@ -11,6 +11,7 @@ jQuery ($) ->
   $('#m-consent button').click (event) ->
     # Store consent in a persisten cookie and hide the information
     $.cookie 'consent', true, { expires: 365*5, path: '/', domain: 'malmo.se' }
+    ga('send', 'event', "CookieConsent", 'yes', 1)
 
     # Hide box and restore margin bottom
     $('#m-consent').hide()
