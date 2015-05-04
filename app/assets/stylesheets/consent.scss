@@ -1,0 +1,21 @@
+#m-consent {
+  display: none;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1em 1em 1.2em;
+  background: $warning-background;
+  border: $warning-border;
+  p {
+    font-family: $sans-serif;
+    font-size: emize(14);
+    margin: 0;
+    overflow: hidden;
+  }
+  button {
+    float: right;
+    margin-left: 2em;
+    vertical-align: middle;
+  }
+}

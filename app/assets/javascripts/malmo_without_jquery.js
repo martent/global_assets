@@ -20,6 +20,7 @@
 //= require employee_search
 //= require footer_content
 //= require footer
+//= require consent
 //= require share
 //= require fastclick
 //= require ios-orientationchange-fix
