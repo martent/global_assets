@@ -62,7 +62,7 @@ function runmd() {
       masterMD.history.push(masterMD.rootID);
       addCompleteHistory({
         'id': masterMD.rootID,
-        'text': 'DokumentA',
+        'text': 'Dokument',
         'type': 'root',
         'index': 0,
         'data': {}
@@ -77,7 +77,7 @@ function runmd() {
           masterMD.history.push(masterMD.rootID);
           addCompleteHistory({
             'id': masterMD.rootID,
-            'text': 'DokumentB',
+            'text': 'Dokument',
             'type': 'root',
             'index': 0,
             'data': {}
@@ -97,7 +97,7 @@ function runmd() {
           masterMD.history.push(masterMD.rootID);
           addCompleteHistory({
             'id': masterMD.rootID,
-            'text': 'DokumentC',
+            'text': 'Dokument',
             'type': 'root',
             'index': 0,
             'data': {}
@@ -108,7 +108,7 @@ function runmd() {
         masterMD.history.push(masterMD.rootID);
         addCompleteHistory({
           'id': masterMD.rootID,
-          'text': 'DokumentD',
+          'text': 'Dokument',
           'type': 'root',
           'index': 0,
           'data': {}
@@ -120,7 +120,7 @@ function runmd() {
     masterMD.history.push(masterMD.rootID);
     addCompleteHistory({
       'id': masterMD.rootID,
-      'text': 'DokumentE',
+      'text': 'Dokument',
       'type': 'root',
       'index': 0,
       'data': {}
