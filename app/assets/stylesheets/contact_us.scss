@@ -4,6 +4,14 @@
   .vcard {
     margin-bottom: 2em;
 
+    img {
+      float: right;
+      width: 11em;
+      max-width: 28%;
+      height: auto;
+      margin: .1em 0 1em 1.5em;
+    }
+
     &:last-of-type {
       margin-bottom: 0;
     }
