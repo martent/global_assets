@@ -22,6 +22,7 @@
 //= require footer
 //= require share
 //= require fastclick
+//= require picturefill
 //= require ios-orientationchange-fix
 //= require jquery.cycle2.min.js
 //= require jquery.cycle2.swipe.min.js
