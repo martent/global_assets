@@ -6,9 +6,9 @@ jQuery ($) ->
     if document.location.hostname.match(/malmo\.se$/)
       $('#m-consent').show()
 
-    # Leave room for the box by increasing margin bottom
-    $('body').css('margin-bottom',
-      parseInt($('body').css('margin-bottom')) + parseInt($("#m-consent").outerHeight()))
+      # Leave room for the box by increasing margin bottom
+      $('body').css('margin-bottom',
+        parseInt($('body').css('margin-bottom')) + parseInt($("#m-consent").outerHeight()))
 
   $('#m-consent button').click (event) ->
     # Store consent in a persisten cookie and hide the information
