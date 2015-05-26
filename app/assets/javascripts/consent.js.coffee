@@ -2,7 +2,9 @@
 jQuery ($) ->
   # Show contsent info if the user+UA hasn't made a consent before
   if typeof $.cookie('consent') is 'undefined' or $.cookie('consent') is false
-    $('#m-consent').show()
+    # Only for the malmo.se domain
+    if document.location.hostname.match(/malmo\.se$/)
+      $('#m-consent').show()
 
     # Leave room for the box by increasing margin bottom
     $('body').css('margin-bottom',
