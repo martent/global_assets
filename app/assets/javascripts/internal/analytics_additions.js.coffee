@@ -4,7 +4,6 @@ jQuery ($) ->
   profile = $.cookie(msettings.myprofileName) or {}
   ga('send', 'event', 'Department', profile.department or 'none')
   ga('send', 'event', 'WorkingField', profile.workingfield or 'none')
-  ga('send', 'event', 'UAID', profile.ua or 'none')
 
   # Tracking of categories and author for "Nyheter" and "Blogg". `newsTracking` and `blogTracking` is defined on those sites
   if typeof newsTracking isnt 'undefined'
