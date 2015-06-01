@@ -1,7 +1,7 @@
 # Intranet specific GA logging
 jQuery ($) ->
   # Track department/working field from cookie as Event logging
-  profile = $.cookie('myprofile') or {}
+  profile = $.cookie(msettings.myprofileName) or {}
   ga('send', 'event', 'Department', profile.department or 'none')
   ga('send', 'event', 'WorkingField', profile.workingfield or 'none')
   ga('send', 'event', 'UAID', profile.ua or 'none')

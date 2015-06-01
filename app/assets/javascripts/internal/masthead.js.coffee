@@ -41,20 +41,10 @@ jQuery ($) ->
     else if items.length is 1
       $(navItem).find('a').attr('href', items[0].homepage_url)
 
-  # We share the profile cookie on multiple systems so we have a limited set of
-  # environments for the profile
-  # Set test or development as a class in the body tag if applicable
-  development = $('body').hasClass('development')
-  test = $('body').hasClass('test') or (typeof env isnt "undefined" and env is 'test')
-
   # Users profile from the Dashboard is available in a cookie.
   $.cookie.json = true
 
-  if development then myprofile = "myprofile-development"
-  else if test then myprofile = "myprofile-test"
-  else myprofile = "myprofile"
-
-  profile = $.cookie(myprofile) || {}
+  profile = $.cookie(msettings.myprofileName) || {}
   if profile.departments then hijackNav('#nav-my-department', profile.departments, 'Mina förvaltningar')
   if profile.workingfields then hijackNav('#nav-my-workingfield', profile.workingfields, 'Mina arbetsfält')
 

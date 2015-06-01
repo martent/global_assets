@@ -8,10 +8,10 @@ default: &default
 
 development: &development
   <<: *default
-  sv_base_url: http://www.local.malmo.se:3000/
+  sv_base_url: http://www.local.malmo.se:3031/
   asset_host: http://www.local.malmo.se:3001/assets/
   ua_account: 'UA-19475064-1'
-  dashboard_base_url: "http://www.local.malmo.se:3000/"
+  dashboard_base_url: "http://www.local.malmo.se:3031/"
 
 staging:
   <<: *default
