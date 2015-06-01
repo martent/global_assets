@@ -1,10 +1,21 @@
-_env = '<%= ENV['RAILS_ENV'] %>'
+<%
+  case ENV['RAILS_ENV']
+  when 'test'
+    _mp = 'myprofile-test'
+  when 'staging'
+    _mp = 'myprofile-test'
+  when 'development'
+    _mp = 'myprofile-development'
+  else
+    _mp = 'myprofile'
+  end
+%>
 
 window.msettings =
   audience: '<%= ENV['AUDIENCE'] %>'
   surveyMarkup: ''
-  environment: _env
-  myprofileName: if _env is 'production' then 'myprofile' else "myprofile-#{_env}"
+  environment: '<%= ENV['RAILS_ENV'] %>'
+  myprofileName: '<%= _mp %>'
 
 jQuery ($) ->
   $.cookie.json = true
