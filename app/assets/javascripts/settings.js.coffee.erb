@@ -18,12 +18,14 @@ window.msettings =
   myprofileName: '<%= _mp %>'
 
 # Get Universal Analytics masked user id from cookie
-_mp = JSON.parse(decodeURIComponent(document.cookie.replace(new RegExp("(?:(?:^|.*;)\\s*" + encodeURIComponent(msettings.myprofileName).replace(/[\-\.\+\*]/g, "\\$&") + "\\s*\\=\\s*([^;]*).*$)|^.*$"), "$1")) || {} );
-
-if _mp and _mp.ua
-  window.muaid = _mp.ua
-else
+try
+  window.muaid = JSON.parse(decodeURIComponent(
+    document.cookie.replace(new RegExp("(?:(?:^|.*;)\\s*" +
+    encodeURIComponent(msettings.myprofileName).replace(/[\-\.\+\*]/g, "\\$&") +
+    "\\s*\\=\\s*([^;]*).*$)|^.*$"), "$1"))).ua;
+catch
   window.muaid = null
 
 jQuery ($) ->
   $.cookie.json = true
+  return
