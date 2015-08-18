@@ -8,9 +8,14 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 
 // Use masked user id if available for Universal Analytics
 if (muaid) {
-  ga('create', UAAccount, { 'userId': muaid });
+  ga('create', UAAccount, {
+    'userId': muaid,
+    'cookieDomain': 'malmo.se'
+  });
 } else {
-  ga('create', UAAccount);
+  ga('create', UAAccount, {
+    'cookieDomain': 'malmo.se'
+  });
 }
 window.ga = ga;
 
