@@ -5,12 +5,6 @@ jQuery ($) ->
       event.preventDefault()
       setTimeout('document.location = "' + $a.attr('href') + '"', 100)
 
-  # Check if a custom URI is defined on the Sitevision page
-  if typeof currentURI is "string"
-    ga('send', 'pageview', currentURI + document.location.search)
-  else
-    ga('send', 'pageview')
-
   # Track outgoing links as regular page views
   $("a[href^='http://'], a[href^='https://']").click (event) ->
     $a = $(@)
