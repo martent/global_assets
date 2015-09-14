@@ -10,7 +10,10 @@ jQuery ($) ->
     $a = $(@)
     # Don't hijack href's in search results and URL's to malmo.se apps
     if $a.parents('.search-and-results').length is 0 and !$a.attr('href').match(/.malmo\.se\//)
-      ga('send', 'pageView', 'ExternalLink ' + $a.attr("href"))
+      ga('send', {
+        'hitType': 'pageview',
+        'page': 'ExternalLink ' + $a.attr("href")
+      })
       gaDelayEvent($a, event)
 
   # Track file downloads
@@ -25,5 +28,8 @@ jQuery ($) ->
       if $.inArray(extension, fileTypes) isnt -1
         $a.click (event) ->
           link = $(this).attr("href")
-          ga('send', 'pageView', 'FileDownload ' + link)
+          ga('send', {
+            'hitType': 'pageview',
+            'page': 'FileDownload ' + link
+          })
           gaDelayEvent($a, event)
