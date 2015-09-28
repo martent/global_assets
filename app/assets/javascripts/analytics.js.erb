@@ -19,11 +19,13 @@ if (muaid) {
   });
 }
 
-if (typeof currentURI === "string") {
-  ga('send', 'pageview', currentURI + document.location.search);
-} else {
-  ga('send', 'pageview');
-}
+jQuery(function($) {
+  if (typeof currentURI === "string") {
+    ga('send', 'pageview', currentURI + document.location.search);
+  } else {
+    ga('send', 'pageview');
+  }
+});
 
 window.ga = ga;
 
