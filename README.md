@@ -27,23 +27,40 @@ A web server optimized to serve static files. Ruby is not needed on the server.
 
 
 ## Development Setup
-The assets are developed using Sprockets and the Asset Pipeline in a stripped down Ruby on Rails-application. The application is only used for development, testing, build and deployment. You can use the application as a local asset host when you are developing or adapting other applications to the global assets.
+We use [Puppet](https://puppetlabs.com/) in standalone mode to setup development environments, see [puppet-mcommons](https://github.com/malmostad/puppet-mcommons/) for in-depth details.
 
-To install the required Ruby gems, run:
+Development dependencies:
 
-```
-$ bundle install
+* [Vagrant](https://www.vagrantup.com/)
+* A Vagrant compatible virtual machine such as VirtualBox or VMWare
+
+To get the project files and create a Vagrant box with a ready-to-use development environment on your own machine, run the following commands:
+
+```shell
+$ git clone git@github.com:malmostad/global_assets.git
+$ cd global_assets
+$ vagrant up
 ```
 
-Start the local asset server:
+Log in to the Vagrant box as the `vagrant` user and start the application in the Vagrant box:
 
+```shell
+$ vagrant ssh
+$ cd /vagrant
+$ rails s -b 0.0.0.0
 ```
-$ rails s -p 3001
-```
+
+Point another local web applications link to the global assets at http://127.0.0.1:3039. Editing of the project files on your host system will be reflected when you hit reload in your browser.
+
+When you run the `vagrant up` command for the first time it creates an Ubuntu 14.04 based Vagrant box with a ready-to-use development environment for the application. This will take some time. Vagrant will launch fast after the first run.
+
+If you get port conflicts in your host system, change `forwarded_port` in the `Vagrantfile` You might also want to edit the value for `vm.hostname` and `puppet.facter` in the same file or do a mapping `localhost` mapping in your hosts `host` file to reflect that value.
 
 You might need to map a domain name to your local host like `www.local.malmo.se` to debug and test the JavaScript code.
 
-Use the local views in the asset application for the visual part of the development. You can also point another locally installed web application your started asset server.
+You can also point another locally installed web application to your started asset server or our Prototypes Jekyll application:
+
+https://github.com/malmostad/prototypes
 
 ## Build and Deployment
 Capistrano is used for build and deployment to the server from your local copy. Include the `AUDIENCE=internal|external` in the deployment command. `internal` is for the intranet version and `external` for public web sites.
