@@ -9,6 +9,7 @@ _site
 /public/assets
 /dist
 .sass-cache
+/.vagrant
 
 /app/assets/javascripts/footer_content.js
 /app/assets/javascripts/masthead_content.js
