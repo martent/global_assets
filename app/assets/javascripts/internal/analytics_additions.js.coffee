@@ -2,6 +2,7 @@
 jQuery ($) ->
   # Track department/working field from cookie as Event logging
   profile = $.cookie(msettings.myprofileName) or {}
+  ga('send', 'event', 'HRDepartment', profile.hr_department or 'none')
   ga('send', 'event', 'Department', profile.department or 'none')
   ga('send', 'event', 'WorkingField', profile.workingfield or 'none')
 
