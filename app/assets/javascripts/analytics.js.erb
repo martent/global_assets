@@ -20,6 +20,7 @@ if (muaid) {
 }
 
 jQuery(function($) {
+  ga('require', 'linkid');
   if (typeof currentURI === "string") {
     ga('send', 'pageview', currentURI + document.location.search);
   } else {
