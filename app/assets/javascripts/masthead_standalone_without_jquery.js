@@ -1,3 +1,4 @@
+//= require settings
 //= require grunticon.loader
 //= require grunticons
 //= require jquery-ui.custom.min

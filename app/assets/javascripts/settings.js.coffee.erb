@@ -24,7 +24,7 @@ try
     encodeURIComponent(msettings.myprofileName).replace(/[\-\.\+\*]/g, "\\$&") +
     "\\s*\\=\\s*([^;]*).*$)|^.*$"), "$1"))).ua;
 catch
-  window.muaid = null
+  window.muaid = false
 
 jQuery ($) ->
   $.cookie.json = true
