@@ -6,7 +6,7 @@ AssetsContainer::Application.configure do
 
   config.assets.digest = false
   config.assets.compress = true
-  config.assets.js_compressor = :uglifier
+  config.assets.js_compressor = Uglifier.new(copyright: true)
   config.assets.compile = false
 
   # Send deprecation notices to registered listeners
