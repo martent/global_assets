@@ -1,8 +1,8 @@
+//= require jquery.cookie
 //= require settings
 //= require grunticon.loader
 //= require grunticons
 //= require jquery-ui.custom.min
-//= require jquery.cookie
 //= require bootstrap_custom
 //= require masthead_content
 //= require masthead
