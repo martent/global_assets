@@ -79,6 +79,7 @@ The compression levels for CSS and Javascript files are configured in `config/en
 [Grunticon](https://github.com/filamentgroup/grunticon) is used to compile SVG icons into CSS files with PNG fallbacks. Master SVG files is in `masters/icons` and the output goes to `app/assets/icons`. To setup Grunticon, make sure you have [Grunt](http://gruntjs.com/) installed and then run the following command in the project root:
 
 ```
+npm install -g grunt-cli
 npm install
 ```
 

@@ -1,5 +1,4 @@
 module.exports = (grunt) ->
-  'use strict'
   grunt.initConfig
     grunticon:
       icons:
@@ -10,6 +9,7 @@ module.exports = (grunt) ->
           dest: 'app/assets/icons'
         ]
         options:
+          enhanceSVG: true
           datasvgcss: "icons.data.svg.css"
           datapngcss: "icons.data.png.css"
           urlpngcss: "icons.fallback.css"
