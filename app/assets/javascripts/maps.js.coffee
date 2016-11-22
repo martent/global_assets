@@ -50,6 +50,7 @@ jQuery ($) ->
 
     # Create a map if not present
     if $box.find("iframe").length < 1
+      $(@).attr('data-text', $(@).text())
       $(@).text("Dölj karta")
       $box.append $("<div class='map-box'><iframe scrolling='no' frameborder='0' src='#{$(@).attr("data-url")}'></iframe></div>")
 
@@ -60,5 +61,5 @@ jQuery ($) ->
 
     # Map is present, remove it
     else
-      $(@).text("Visa på karta")
+      $(@).text($(@).attr('data-text'))
       $box.find(".map-box").remove()
