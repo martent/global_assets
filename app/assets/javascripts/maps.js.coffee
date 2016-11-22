@@ -45,12 +45,20 @@ jQuery ($) ->
 
   # Show theme map
   $(".theme-map button").click ->
+    $(@).blur()
     $box = $(@).parent()
-    $box.addClass("show")
-      .append $("<iframe scrolling='no' frameborder='0' src='#{$(@).attr("data-url")}'></iframe>")
 
-    # Place a close link on the map
-    $box.prepend("<a href='#' class='close-map m-icon-close'>Stäng</a>")
-      .find("a").click (event)->
-        event.preventDefault()
-        $box.removeClass("show").find("iframe, a.close-map").remove()
+    # Create a map if not present
+    if $box.find("iframe").length < 1
+      $(@).text("Dölj karta")
+      $box.append $("<div class='map-box'><iframe scrolling='no' frameborder='0' src='#{$(@).attr("data-url")}'></iframe></div>")
+
+      # After injection, scroll to the top of the $box
+      $('html, body').animate
+        scrollTop: $(@).offset().top - 60
+      , 100
+
+    # Map is present, remove it
+    else
+      $(@).text("Visa på karta")
+      $box.find(".map-box").remove()
