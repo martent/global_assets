@@ -20,19 +20,12 @@ jQuery ($) ->
     $selector = $($(@).attr("data-map-selector"))
 
     if $selector.length
-
-      # Map exists, remove it
-      if $selector.find("iframe").length
-        $(@).text("Visa på karta")
-        $selector.empty().hide()
-
-      # Create map
-      else
+      # Create a map if not present
+      if $selector.find("iframe").length < 1
         $iframe = $('<iframe scrolling="no" frameborder="0" src=""></iframe>')
 
-        $(@).text("Dölj karta")
-        # Set selector position to relative so we can place the close link on it
-        $selector.css("position", "relative") if $selector.css("position") is "static"
+        $(@).attr('data-text', $(@).text())
+        $(@).text("dölj karta")
 
         # Inject the iframe
         $selector.show().html($iframe.attr("src", urlForInlineMap($(@).attr("data-poi"))))
@@ -42,6 +35,11 @@ jQuery ($) ->
           $('html, body').animate
             scrollTop: $($(@).attr("data-scroll-to")).offset().top - 45
           , 100
+
+      # Map is present, remove it
+      else
+        $(@).text($(@).attr('data-text'))
+        $selector.empty().hide()
 
   # Show theme map
   $(".theme-map button").click ->
