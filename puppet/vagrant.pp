@@ -11,7 +11,7 @@ $app_home       = '/vagrant'
 class { '::mcommons': }
 
 class { '::mcommons::ruby':
-  version => '2.3.1',
+  version => '2.3.3',
 }
 
 class { 'mcommons::ruby::bundle_install': }
