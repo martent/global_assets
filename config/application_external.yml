@@ -15,6 +15,8 @@ development: &development
 staging:
   <<: *default
   sv_base_url: http://www.test.malmo.se/
+  site_search_url: http://sok.malmo.se
+  site_search_ac_url: http://sok.malmo.se/search/autocomplete
   asset_host: //assets.malmo.se/external/v4-staging/
   ua_account: 'UA-19475063-1'
 

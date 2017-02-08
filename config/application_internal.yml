@@ -16,9 +16,11 @@ development: &development
 staging:
   <<: *default
   sv_base_url: https://komin.test.malmo.se/
+  site_search_url: //kominsok.malmo.se/
+  site_search_ac_url: //kominsok.malmo.se/search/autocomplete
   asset_host: //assets.malmo.se/internal/v4-staging/
   ua_account: 'UA-19475064-1'
-  dashboard_base_url: "https://webapps06.malmo.se/dashboard-test/"
+  dashboard_base_url: "https://minsidatest.malmo.se/"
 
 production:
   <<: *default
