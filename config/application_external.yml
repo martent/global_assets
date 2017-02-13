@@ -20,5 +20,5 @@ staging:
 
 production:
   <<: *default
-  site_search_url: http://sok.malmo.se
-  site_search_ac_url: http://sok.malmo.se/search/autocomplete
+  site_search_url: https://sok.malmo.se
+  site_search_ac_url: https://sok.malmo.se/search/autocomplete
