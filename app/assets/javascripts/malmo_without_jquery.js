@@ -2,6 +2,7 @@
 //= require analytics
 //= require analytics_shared
 //= require analytics_additions
+//= require siteimprove
 //= require grunticon.loader
 //= require grunticons
 //= require utils
